@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Snackbar/Introduction" args={{}} />
+
+# Snackbar
+
+<p style={{ fontSize: '1.2rem' }}>
+  The snackbar component is managed through redux. For this reason, every time
+  we open a snackbar a dispatch is made.
+</p>
+
+<p style={{ fontSize: '1.2rem' }}>
+  You can open many snackbars at the same time, but only 3 will be shown at the
+  same time, that is, if we open more than 3, the first to be opened will be
+  erased
+</p>
+
+## Using the snackbar
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    To open a snackbar we must import the hook useSnackbar, found in{' '}
+    <b>src/hooks/useSnackbar</b>
+  </li>
+</ul>
+
+```js
+import useSnackbar from 'src/hooks/useSnackbar';
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    Then we get the function openSnackbar doing a destructuring of useSnackbar.
+  </li>
+</ul>
+
+```js
+const { openSnackbar } = useSnackbar();
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    Finally, it remains to execute the openSnackbar function. It receives a
+    single parameter, which has to be an
+    <b>
+      {' '}
+      object (variant: 'danger' | 'info' | 'success' | 'warning', content:
+      string, action: object(title: string, onClick: func, href: string,
+      external: bool))
+    </b>. The variant key indicates what type the snackbar will be, and the content
+    key indicates what text will be displayed
+  </li>
+</ul>
+
+```js
+<Button
+  onClick={() =>
+    openSnackbar({
+      variant: 'info',
+      content: 'A notification was sent'
+      action: {title: 'See', href: 'https://google.com', , external: true} // optional
+    })
+  }
+>
+  Open Info Snackbar
+</Button>
+```
+
+### Complete example
+
+```js
+import { memo } from 'react';
+import useSnackbar from 'src/hooks/useSnackbar';
+
+const ComponentName = () => {
+  const { openSnackbar } = useSnackbar();
+
+  const handleOpenSnackbar = () => {
+    openSnackbar({
+      variant: 'info',
+      content: 'A notification was sent',
+      action: { title: 'See', href: 'https://google.com', external: true } // optional
+    });
+  };
+
+  return <button onClick={handleOpenSnackbar}>Open Info Snackbar</button>;
+};
+
+export default memo(ComponentName);
+```

@@ -1,0 +1,191 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Modal/Introduction" args={{}} />
+
+# Modal
+
+<p style={{ fontSize: '1.2rem' }}>
+  We handle the modal component through redux, so that in this way we can access
+  to open and close it from anywhere due to the shared state. Therefore, in
+  order to open or close a modal, we will have to execute a{' '}
+  <b>dispatch function</b>
+</p>
+<p style={{ fontSize: '1.2rem' }}>
+  To use a modal we can use the ones that are already created by default, or we
+  can create a new one ourselves.
+</p>
+
+<p style={{ fontSize: '1.2rem' }}>
+  When opening the modal we have to pass it a required parameter:
+</p>
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    <b>component:</b> It is a string, it indicates which component we are going
+    to render
+  </li>
+</ul>
+
+<p style={{ fontSize: '1.2rem' }}>
+  The other parameters that we pass are not required.{' '}
+  <b>These parameters will be passed as props to the indicated component</b>.
+  There are two other parameters that have a specific functionality in the
+  modal:
+</p>
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    <b>size:</b> width of the modal (xs, sm, md (default), lg, xl)
+  </li>
+  <li style={{ fontSize: '1.2rem' }}>
+    <b>loading:</b> if the modal is loading: true or false
+  </li>
+</ul>
+
+## Create new modal
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    In order to create a new modal, the first thing we have to do is go to
+    <b> src/components/Base/Modal/CustomModals</b> and create a new component with
+    the name of the modal, for example LoginModal.js
+  </li>
+  <li style={{ fontSize: '1.2rem' }}>
+    Then we head to <b>src/store/Modals/modalsLibs.js</b>. Once here:
+    <ul>
+      <li style={{ fontSize: '1.2rem' }}>
+        To the object <b>modalTypes</b> we add a new key with the name of the
+        modal
+      </li>
+      <li style={{ fontSize: '1.2rem' }}>
+        Then we add a new case to the switch with the component created
+        previously
+      </li>
+    </ul>
+  </li>
+</ul>
+<p style={{ fontSize: '1.2rem' }}>
+  With the LoginModal example, the modalsLibs.js file would look like this
+</p>
+
+```js
+import ConfirmModal from '../../components/Base/Modal/CustomModals/ConfirmModal';
+import EditAvatarModal from '../../components/Base/Modal/CustomModals/EditAvatarModal';
+import ProfileInvitation from '../../components/Base/Modal/CustomModals/ProfileInvitationModal';
+import Login from '../../components/Base/Modal/CustomModals/LoginModal'; // import the created component
+
+class ModalsLibs {
+  static renderDialog(component, props) {
+    switch (component) {
+      case modalTypes.Confirm:
+        return <ConfirmModal {...props} />;
+      case modalTypes.Profile:
+        return <ProfileInvitation {...props} />;
+      case modalTypes.EditAvatar:
+        return <EditAvatarModal {...props} />;
+      case modalTypes.Login: // access the key of modal Types
+        return <Login {...props} />; //  return the component created for the Login modal
+      default:
+        <ConfirmModal {...props} />;
+    }
+  }
+}
+
+export const modalTypes = {
+  Confirm: 'Confirm',
+  Profile: 'Profile',
+  EditAvatar: 'EditAvatar',
+  Login: 'Login' // add the new key in modalTypes
+};
+
+export default ModalsLibs;
+```
+
+## Using the modal
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>Import the dispatch function</li>
+</ul>
+
+```js
+import { useDispatch } from 'react-redux';
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    Import redux actions of the modals from{' '}
+    <b>src/store/Modals/modalsActions</b> keep in mind that the path varies
+    depending on which file we import it from
+  </li>
+</ul>
+
+```js
+import { openModal } from 'src/store/Modals/modalsActions';
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>
+    Import modalTypes from <b>src/store/Modals/modalsLibs</b> keep in mind that
+    the path varies depending on which file we import it from
+  </li>
+</ul>
+
+```js
+import { modalTypes } from 'src/store/Modals/modalsLibs';
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>Create a handle open modal function</li>
+</ul>
+
+```js
+const handleOpenLoginModal = () => {
+  dispatch(
+    openModal({
+      component: modalTypes.Login,
+      loading: false, // insert a variable if necessary
+      size: 'lg',
+      // custom props here, for example:
+      title: 'Login',
+      description: 'Login description'
+    })
+  );
+};
+```
+
+<ul>
+  <li style={{ fontSize: '1.2rem' }}>Execute the function</li>
+</ul>
+
+```js
+<button onClick={handleOpenLoginModal}>Open Login Modal</button>
+```
+
+### Complete example
+
+```js
+import { memo } from 'react';
+import { useDispatch } from 'react-redux';
+import { openModal } from 'src/store/Modals/modalsActions'; // the path may change depending on the location of this file
+import { modalTypes } from 'src/store/Modals/modalsLibs'; // the path may change depending on the location of this file
+
+const LoginButton = () => {
+  const dispatch = useDispatch();
+
+  const handleOpenLoginModal = () => {
+    dispatch(
+      openModal({
+        component: modalTypes.Login,
+        loading: false, // insert a variable if necessary
+        size: 'lg',
+        // custom props here, for example:
+        title: 'Login',
+        description: 'Login description'
+      })
+    );
+  };
+
+  return <button onClick={handleOpenLoginModal}>Open Login Modal</button>;
+};
+
+export default memo(LoginButton);
+```
