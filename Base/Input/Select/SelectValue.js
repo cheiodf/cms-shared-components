@@ -8,7 +8,7 @@ import {
   SelectText
 } from './selectStyles';
 // Icons
-import { CrossIcon } from '../../../Icons';
+import { CrossIcon } from '../../../../components/Icons';
 
 const SelectValue = ({
   selectValue,

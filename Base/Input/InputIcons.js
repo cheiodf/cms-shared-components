@@ -8,7 +8,7 @@ import {
   EyeIcon,
   EyeCrossedIcon,
   CrossCircleOutlineIcon
-} from '../../Icons';
+} from '../../../components/Icons';
 
 const InputIcons = ({
   IconLeft,

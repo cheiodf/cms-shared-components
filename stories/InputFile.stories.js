@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Avatar from '../components/Base/Avatar/Avatar';
-import Button from '../components/Base/Button/Button';
-import InputFile from '../components/Base/Input/InputFile/InputFile';
-import { UploadIcon } from '../components/Icons';
+import Avatar from '../Base/Avatar/Avatar';
+import Button from '../Base/Button/Button';
+import InputFile from '../Base/Input/InputFile/InputFile';
+import { UploadIcon } from '../../components/Icons';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

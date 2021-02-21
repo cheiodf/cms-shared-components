@@ -1,4 +1,4 @@
-import { navigation } from './constants/navigation';
+import { navigation } from '../../utils/constants/navigation';
 
 const navigationFlatFunction = () => {
   const newNavigation = [];

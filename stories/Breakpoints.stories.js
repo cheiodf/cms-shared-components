@@ -1,6 +1,5 @@
-import React from 'react';
 import { breakpoints, breakpointsMin } from '../utils/constants/breakpoints';
-import Typography from '../components/Base/Typography/Typography';
+import Typography from '../Base/Typography/Typography';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -77,8 +76,8 @@ const Template = () => (
 
     <Typography tag="p" margin="0 0 2em 0" inline>
       To use the breakpoints values you must import the object located in{' '}
-      <b>src/utils/constants/breakpoints</b>. These measures must be used in the
-      @media when you use <i>max-width</i>
+      <b>src/cms-shared-components/utils/constants//breakpoints</b>. These
+      measures must be used in the @media when you use <i>max-width</i>
     </Typography>
     <div
       style={{
@@ -99,8 +98,8 @@ const Template = () => (
 
       <Typography tag="p" margin="0 0 2em 0" inline>
         To use the breakpoints values you must import the object located in{' '}
-        <b>src/utils/constants/breakpoints</b>. These measures must be used in
-        the @media when you use <i>min-width</i>
+        <b>src/cms-shared-components/utils/constants//breakpoints</b>. These
+        measures must be used in the @media when you use <i>min-width</i>
       </Typography>
       <div
         style={{

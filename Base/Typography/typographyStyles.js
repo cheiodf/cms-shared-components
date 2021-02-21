@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import agnosticStyled from '../../../utils/agnosticStyled';
+import agnosticStyled from '../../../cms-shared-components/utils/agnosticStyled';
 
 const defaultTagProps = {
   h1: { size: 2, margin: '0 0 0.35em 0', weight: 'bold' },

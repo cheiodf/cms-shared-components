@@ -1,5 +1,4 @@
-import React from 'react';
-import Hidden from '../components/Base/Hidden/Hidden';
+import Hidden from '../Base/Hidden/Hidden';
 import { breakpoints } from '../utils/constants/breakpoints';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

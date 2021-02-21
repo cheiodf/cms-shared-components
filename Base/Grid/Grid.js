@@ -1,4 +1,3 @@
-import React from 'react';
 import { defaultProps, props } from './gridProps';
 import { GridContainer } from './gridStyles';
 

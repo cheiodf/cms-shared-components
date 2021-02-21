@@ -1,5 +1,4 @@
-import React from 'react';
-import Paper from '../components/Base/Paper/Paper';
+import Paper from '../Base/Paper/Paper';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Paper',

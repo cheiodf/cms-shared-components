@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { zIndex } from '../../../../utils/constants/zIndex';
+import { zIndex } from '../../../../cms-shared-components/utils/constants//zIndex';
 import { input } from '../inputStyles';
 
 export const SelectContainer = styled.div`

@@ -1,5 +1,5 @@
 import { memo, useEffect } from 'react';
-import { ArrowDownIcon } from '../../Icons';
+import { ArrowDownIcon } from '../../../components/Icons';
 import Checkbox from '../Input/Checkbox/Checkbox';
 import {
   TableHeadContainer,

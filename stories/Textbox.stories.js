@@ -1,7 +1,10 @@
-import React from 'react';
-import Textbox from '../components/Base/Input/Textbox/Textbox';
-import Paper from '../components/Base/Paper/Paper';
-import { CalendarOutlineIcon, MailIcon, LockIcon } from '../components/Icons';
+import Textbox from '../Base/Input/Textbox/Textbox';
+import Paper from '../Base/Paper/Paper';
+import {
+  CalendarOutlineIcon,
+  MailIcon,
+  LockIcon
+} from '../../components/Icons';
 import inputArgs from './assets/args/inputArgs';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

@@ -1,6 +1,5 @@
-import React from 'react';
-import Button from '../components/Base/Button/Button';
-import { ShareIcon } from '../components/Icons';
+import Button from '../Base/Button/Button';
+import { ShareIcon } from '../../components/Icons';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

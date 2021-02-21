@@ -4,7 +4,7 @@ import { BreacrumbList } from './breadcrumbStyles';
 import Paper from '../Paper/Paper';
 import BreadcrumbLink from './BreadcrumbLink';
 // icons
-import { HomeIcon } from '../../Icons';
+import { HomeIcon } from '../../../components/Icons';
 
 const Breadcrumb = ({ links, home }) => {
   return (

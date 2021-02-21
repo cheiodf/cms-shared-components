@@ -5,7 +5,7 @@ import {
   CheckboxIcon,
   CheckboxText
 } from './checkboxStyles';
-import { CheckIcon } from '../../../Icons';
+import { CheckIcon } from '../../../../components/Icons';
 
 const Checkbox = forwardRef((props, ref) => {
   const { disabled, title, titleProps, id } = props;

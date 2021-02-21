@@ -1,6 +1,5 @@
-import React from 'react';
 import { zIndex } from '../utils/constants/zIndex';
-import Typography from '../components/Base/Typography/Typography';
+import Typography from '../Base/Typography/Typography';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -77,7 +76,7 @@ const Template = () => (
 
     <Typography tag="p" margin="0 0 2em 0" inline>
       To use the z index values you must import the object located in{' '}
-      <b>src/utils/constants/zIndex</b>
+      <b>src/cms-shared-components/utils/constants//zIndex</b>
     </Typography>
     <div
       style={{

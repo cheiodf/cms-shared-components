@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AvatarContainer,
   Image,
@@ -6,7 +5,7 @@ import {
   ImageIconWrapper
 } from './avatarStyles';
 // icons
-import { EditIcon } from '../../Icons';
+import { EditIcon } from '../../../components/Icons';
 
 const AvatarImage = ({ size, isEditable, src }) => {
   return (

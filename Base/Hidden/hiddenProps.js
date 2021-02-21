@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { breakpoints } from '../../../utils/constants/breakpoints';
+import { breakpoints } from '../../../cms-shared-components/utils/constants//breakpoints';
 
 export const props = {
   children: PropTypes.node.isRequired,

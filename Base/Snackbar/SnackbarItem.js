@@ -7,9 +7,9 @@ import {
   SnackbarRightSection
 } from './snackbarStyles';
 import SnackbarLibs from '../../../store/Snackbars/snackbarLibs';
-import { CrossIcon } from '../../Icons';
+import { CrossIcon } from '../../../components/Icons';
 import Typography from '../Typography/Typography';
-import useSnackbar from '../../../hooks/useSnackbar';
+import useSnackbar from '../../hooks/useSnackbar';
 
 const SnackbarItem = ({ variant, content, action, id, close, index }) => {
   const animationDuration = useMemo(() => 500, []);

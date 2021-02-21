@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   closeSnackbar,
   openSnackbar
-} from '../store/Snackbars/snackbarActions';
+} from '../../store/Snackbars/snackbarActions';
 
 const useSnackbar = (id, animationDuration = 500) => {
   const dispatch = useDispatch();

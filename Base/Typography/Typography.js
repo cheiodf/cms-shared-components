@@ -1,4 +1,3 @@
-import React from 'react';
 import { props, defaultProps } from './typographyProps';
 import { TypographyComponent } from './typographyStyles';
 

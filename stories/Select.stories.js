@@ -1,9 +1,8 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
-import Button from '../components/Base/Button/Button';
-import Select from '../components/Base/Input/Select/Select';
-import Paper from '../components/Base/Paper/Paper';
-import { MailIcon } from '../components/Icons';
+import Button from '../Base/Button/Button';
+import Select from '../Base/Input/Select/Select';
+import Paper from '../Base/Paper/Paper';
+import { MailIcon } from '../../components/Icons';
 import inputArgs from './assets/args/inputArgs';
 
 // eslint-disable-next-line import/no-anonymous-default-export

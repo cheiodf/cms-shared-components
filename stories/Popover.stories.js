@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Button from '../components/Base/Button/Button';
-import Divider from '../components/Base/Divider/Divider';
-import Popover from '../components/Base/Popover/Popover';
-import PopoverItem from '../components/Base/Popover/PopoverItem';
+import { useState } from 'react';
+import Button from '../Base/Button/Button';
+import Divider from '../Base/Divider/Divider';
+import Popover from '../Base/Popover/Popover';
+import PopoverItem from '../Base/Popover/PopoverItem';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

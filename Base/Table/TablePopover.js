@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MoreIcon } from '../../Icons';
+import { MoreIcon } from '../../../components/Icons';
 import Popover from '../Popover/Popover';
 import PopoverItem from '../Popover/PopoverItem';
 import TableCell from './TableCell';

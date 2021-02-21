@@ -1,7 +1,6 @@
-import React from 'react';
-import { tableData } from '../../public/static/content/data';
-import Table from '../components/Base/Table/Table';
-import { UploadIcon } from '../components/Icons';
+import { tableData } from '../../../public/static/content/data';
+import Table from '../Base/Table/Table';
+import { UploadIcon } from '../../components/Icons';
 
 const filterColumns = (...columns) => {
   const cols = [

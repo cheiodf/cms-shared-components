@@ -1,7 +1,6 @@
-import React from 'react';
-import Grid from '../components/Base/Grid/Grid';
-import GridItem from '../components/Base/Grid/GridItem';
-import Paper from '../components/Base/Paper/Paper';
+import Grid from '../Base/Grid/Grid';
+import GridItem from '../Base/Grid/GridItem';
+import Paper from '../Base/Paper/Paper';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

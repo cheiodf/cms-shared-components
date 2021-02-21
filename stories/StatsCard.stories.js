@@ -1,6 +1,5 @@
-import React from 'react';
-import Grid from '../components/Base/Grid/Grid';
-import StatsCard from '../components/Stats/Card/StatsCard';
+import Grid from '../Base/Grid/Grid';
+import StatsCard from '../../components/Stats/Card/StatsCard';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

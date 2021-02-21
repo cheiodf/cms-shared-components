@@ -1,6 +1,6 @@
 import { useEffect, useMemo, memo, useCallback } from 'react';
 import { props, defaultProps } from './popoverProps';
-import useComponentVisible from '../../../hooks/useComponentVisible';
+import useComponentVisible from '../../../cms-shared-components/hooks/useComponentVisible';
 import Paper from '../Paper/Paper';
 import {
   Container,
@@ -9,8 +9,7 @@ import {
   PopoverOverlay,
   PopoverCrossIcon
 } from './popoverStyles';
-import Hidden from '../Hidden/Hidden';
-import { CrossIcon } from '../../Icons';
+import { CrossIcon } from '../../../components/Icons';
 
 const Popover = ({
   children,

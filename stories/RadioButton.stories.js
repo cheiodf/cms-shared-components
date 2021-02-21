@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Button from '../components/Base/Button/Button';
-import RadioButton from '../components/Base/Input/RadioButton/RadioButton';
-import Textbox from '../components/Base/Input/Textbox/Textbox';
+import Button from '../Base/Button/Button';
+import RadioButton from '../Base/Input/RadioButton/RadioButton';
+import Textbox from '../Base/Input/Textbox/Textbox';
 import inputArgs from './assets/args/inputArgs';
 
 // eslint-disable-next-line import/no-anonymous-default-export

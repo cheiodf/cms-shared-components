@@ -1,8 +1,7 @@
-import React from 'react';
-import Button from '../components/Base/Button/Button';
-import Form from '../components/Base/Form/Form';
-import Textbox from '../components/Base/Input/Textbox/Textbox';
-import Paper from '../components/Base/Paper/Paper';
+import Button from '../Base/Button/Button';
+import Form from '../Base/Form/Form';
+import Textbox from '../Base/Input/Textbox/Textbox';
+import Paper from '../Base/Paper/Paper';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import {
   breakpoints,
   breakpointsMin
-} from '../../../utils/constants/breakpoints';
+} from '../../../cms-shared-components/utils/constants//breakpoints';
 
 const bpSorted = Object.keys(breakpoints);
 

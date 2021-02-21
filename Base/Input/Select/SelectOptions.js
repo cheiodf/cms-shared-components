@@ -10,7 +10,7 @@ import {
   SelectInputSearchContainer
 } from './selectStyles';
 // Icons
-import { SearchIcon } from '../../../Icons';
+import { SearchIcon } from '../../../../components/Icons';
 import Checkbox from '../Checkbox/Checkbox';
 import Typography from '../../Typography/Typography';
 import Paper from '../../Paper/Paper';

@@ -1,6 +1,5 @@
-import React from 'react';
-import Textarea from '../components/Base/Input/Textarea/Textarea';
-import { MailIcon } from '../components/Icons';
+import Textarea from '../Base/Input/Textarea/Textarea';
+import { MailIcon } from '../../components/Icons';
 import inputArgs from './assets/args/inputArgs';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

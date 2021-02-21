@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
-import { zIndex } from '../../../utils/constants/zIndex';
-import { breakpoints } from '../../../utils/constants/breakpoints';
+import { zIndex } from '../../../cms-shared-components/utils/constants//zIndex';
+import { breakpoints } from '../../../cms-shared-components/utils/constants//breakpoints';
 
 const modalWidth = {
   xs: '350px',

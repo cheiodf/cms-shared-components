@@ -1,5 +1,4 @@
-import React from 'react';
-import Typography from '../components/Base/Typography/Typography';
+import Typography from '../Base/Typography/Typography';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'UiKit/Typography',

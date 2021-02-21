@@ -1,4 +1,3 @@
-import React from 'react';
 import { PopoverItemContainer, PopoverItemText } from './popoverStyles';
 import Link from 'next/link';
 

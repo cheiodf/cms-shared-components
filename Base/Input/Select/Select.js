@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { Controller } from 'react-hook-form';
 import SelectInput from './SelectInput';
 // hooks
-import useComponentVisible from '../../../../hooks/useComponentVisible';
+import useComponentVisible from '../../../../cms-shared-components/hooks/useComponentVisible';
 
 // styles
 import { InputContainer } from '../inputStyles';

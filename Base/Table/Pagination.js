@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from '../../Icons';
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../components/Icons';
 import Button from '../Button/Button';
 import { paginationProps, paginationDefaultProps } from './tableProps';
 import { PaginationContainer } from './tableStyles';

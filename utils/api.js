@@ -35,7 +35,7 @@ const checkStatus = response => {
 export const defaultHeaders = () => {
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${localStorage.token}`
+    Authorization: `Bearer ${localStorage.token || sessionStorage.token}`
   };
 
   if (!localStorage.token) delete headers.token_auth;
@@ -43,18 +43,16 @@ export const defaultHeaders = () => {
   return headers;
 };
 
-export default (urlRequest, method = 'GET', body = {}) => {
+const api = async (urlRequest, method = 'GET', body = {}) => {
   const options = {
     method: method,
     headers: defaultHeaders(),
     body: JSON.stringify(body)
   };
 
-  if (method === 'GET') {
-    delete options.body;
-  }
+  if (method === 'GET') delete options.body;
 
-  return fetch(`${process.env.REACT_APP_API_URL}${urlRequest}`, options)
+  return fetch(`${process.env.NEXT_PUBLIC_API_URL}${urlRequest}`, options)
     .then(checkStatus)
     .then(parseJSON);
 };
@@ -72,11 +70,15 @@ export const requestData = (urlRequest, method = 'POST', body = {}) => {
 
   const options = {
     method,
-    headers: { Authorization: `Bearer ${localStorage.token}` },
+    headers: {
+      Authorization: `Bearer ${localStorage.token || sessionStorage.token}`
+    },
     body: formData
   };
 
-  return fetch(`${process.env.REACT_APP_API_URL}${urlRequest}`, options)
+  return fetch(`${process.env.NEXT_PUBLIC_API_URL}${urlRequest}`, options)
     .then(checkStatus)
     .then(parseJSON);
 };
+
+export default api;

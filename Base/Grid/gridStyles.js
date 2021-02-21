@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpointsMin } from '../../../utils/constants/breakpoints';
+import { breakpointsMin } from '../../../cms-shared-components/utils/constants//breakpoints';
 
 const gridItemStyles = ({ cols, rows, colStart, rowStart, order }) =>
   css`

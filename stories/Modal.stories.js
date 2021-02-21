@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Button from '../components/Base/Button/Button';
-import { BellIcon } from '../components/Icons';
-import { wrapper } from '../store.js';
-import { openModal, closeModal } from '../store/Modals/modalsActions';
-import { modalTypes } from '../store/Modals/modalsLibs';
+import Button from '../Base/Button/Button';
+import { BellIcon } from '../../components/Icons';
+import { wrapper } from '../../store';
+import { openModal, closeModal } from '../../store/Modals/modalsActions';
+import { modalTypes } from '../../store/Modals/modalsLibs';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

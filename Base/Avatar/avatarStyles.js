@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Img from 'react-cool-img';
-import { zIndex } from '../../../utils/constants/zIndex';
+import { zIndex } from '../../../cms-shared-components/utils/constants//zIndex';
 
 const avatarSizes = {
   xxs: '.67rem',

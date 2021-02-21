@@ -1,7 +1,5 @@
-import React from 'react';
-import CheckboxGroup from '../components/Base/Input/Checkbox/CheckboxGroup';
-import Checkbox from '../components/Base/Input/Checkbox/Checkbox';
-import inputArgs from './assets/args/inputArgs';
+import CheckboxGroup from '../Base/Input/Checkbox/CheckboxGroup';
+import Checkbox from '../Base/Input/Checkbox/Checkbox';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

@@ -1,6 +1,5 @@
-import React from 'react';
-import Typography from '../components/Base/Typography/Typography';
-import * as Icons from '../components/Icons/';
+import Typography from '../Base/Typography/Typography';
+import * as Icons from '../../components/Icons/';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

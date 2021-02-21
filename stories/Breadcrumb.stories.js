@@ -1,7 +1,6 @@
-import React from 'react';
-import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
-import { wrapper } from '../store';
-import { EditIcon } from '../components/Icons';
+import Breadcrumb from '../Base/Breadcrumb/Breadcrumb';
+import { wrapper } from '../../store';
+import { EditIcon } from '../../components/Icons';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

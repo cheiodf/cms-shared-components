@@ -1,5 +1,4 @@
-import React from 'react';
-import Divider from '../components/Base/Divider/Divider';
+import Divider from '../Base/Divider/Divider';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Divider',

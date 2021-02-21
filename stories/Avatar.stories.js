@@ -1,8 +1,7 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
-import Avatar from '../components/Base/Avatar/Avatar';
-import Button from '../components/Base/Button/Button';
-import defaultImage from '../../public/static/images/defaultAvatar.png';
+import Avatar from '../Base/Avatar/Avatar';
+import Button from '../Base/Button/Button';
+import defaultImage from '../../../public/static/images/defaultAvatar.png';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

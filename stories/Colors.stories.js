@@ -1,5 +1,4 @@
-import React from 'react';
-import { colors } from '../utils/constants/theme';
+import { colors } from '../../utils/constants/theme';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

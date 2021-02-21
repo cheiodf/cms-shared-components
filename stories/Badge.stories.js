@@ -1,7 +1,6 @@
-import React from 'react';
-import Badge from '../components/Base/Badge/Badge';
-import Button from '../components/Base/Button/Button';
-import { BellIcon } from '../components/Icons';
+import Badge from '../Base/Badge/Badge';
+import Button from '../Base/Button/Button';
+import { BellIcon } from '../../components/Icons';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

@@ -8,7 +8,7 @@ import {
   Container,
   TableFullContainer
 } from './tableStyles';
-import useWindowSize from '../../../hooks/useWindowSize';
+import useWindowSize from '../../../cms-shared-components/hooks/useWindowSize';
 import TableRow from './TableRow';
 import TableHeader from './TableHeader';
 import TableHead from './TableHead';

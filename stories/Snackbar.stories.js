@@ -1,6 +1,5 @@
-import React from 'react';
-import Button from '../components/Base/Button/Button';
-import { wrapper } from '../store.js';
+import Button from '../Base/Button/Button';
+import { wrapper } from '../../store';
 import useSnackbar from '../hooks/useSnackbar';
 
 // eslint-disable-next-line import/no-anonymous-default-export
