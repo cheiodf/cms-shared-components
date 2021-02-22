@@ -281,6 +281,7 @@ export const TableSelectLimit = styled.div`
     ${SelectText} {
       color: #fff;
       opacity: 1;
+      padding: 0.5em 2.5em 0.5em 0.75em;
     }
 
     svg,
