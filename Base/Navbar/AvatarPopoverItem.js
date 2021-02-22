@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
-import { LayoutOutlineIcon } from '../../../components/Icons';
 import Typography from '../Typography/Typography';
 import { NavAccountPopoverItem } from './navbarStyles';
 
-const AvatarPopoverItem = ({ onClick, path, isExternal, title }) => {
+const AvatarPopoverItem = ({
+  onClick,
+  path,
+  isExternal,
+  title,
+  icon: Icon
+}) => {
   const Container = ({ children }) =>
     path ? (
       <Link href={path}>
@@ -17,7 +22,7 @@ const AvatarPopoverItem = ({ onClick, path, isExternal, title }) => {
   return (
     <Container>
       <NavAccountPopoverItem onClick={onClick}>
-        <LayoutOutlineIcon width="16" color="#6E6B6B" />
+        <Icon width="16" color="#6E6B6B" />
         <Typography color="#6E6B6B">{title}</Typography>
       </NavAccountPopoverItem>
     </Container>
