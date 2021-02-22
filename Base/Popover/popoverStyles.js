@@ -1,10 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
-import {
-  breakpoints,
-  breakpointsMin
-} from '../../../cms-shared-components/utils/constants//breakpoints';
-import { zIndex } from '../../../cms-shared-components/utils/constants//zIndex';
-import { SidebarCrossIconContainer } from '../../../components/Sidebar/sidebarStyles';
+import { breakpoints, breakpointsMin } from '../../utils/constants/breakpoints';
+import { zIndex } from '../../utils/constants/zIndex';
+import { SidebarCrossIconContainer } from '../Sidebar/sidebarStyles';
 import { Container as PaperContainer } from '../Paper/paperStyles';
 
 export const Container = styled.div`
