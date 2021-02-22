@@ -268,8 +268,9 @@ export const AvatarContainer = styled.div`
 export const TableSelectLimit = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   max-width: 150px;
+  width: 100%;
   margin-bottom: 1rem;
 
   ${SelectContainer} {

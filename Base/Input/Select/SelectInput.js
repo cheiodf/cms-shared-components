@@ -23,11 +23,18 @@ const SelectInput = forwardRef((props, _) => {
     size,
     rules,
     hasCross,
-    hasSearch
+    hasSearch,
+    atChangeValue
   } = props;
 
   const [selectValue, setSelectValue] = useState(
-    defaultValue.length ? defaultValue : multiple ? [] : ''
+    typeof defaultValue === 'number'
+      ? defaultValue
+      : defaultValue.length
+      ? defaultValue
+      : multiple
+      ? []
+      : ''
   );
 
   const handleIsSelected = useCallback(
@@ -50,10 +57,20 @@ const SelectInput = forwardRef((props, _) => {
           : value;
 
         setSelectValue(newValue);
-        setValue(name, !newValue.length && rules.required ? '' : newValue);
+        atChangeValue && atChangeValue(newValue);
+        setValue &&
+          setValue(name, !newValue.length && rules.required ? '' : newValue);
       }
     },
-    [handleIsSelected, multiple, selectValue, setSelectValue, setValue, rules]
+    [
+      handleIsSelected,
+      multiple,
+      selectValue,
+      setSelectValue,
+      setValue,
+      rules,
+      atChangeValue
+    ]
   );
 
   const handleGetValues = useCallback(() => {
@@ -83,7 +100,7 @@ const SelectInput = forwardRef((props, _) => {
     <SelectContainer
       onClick={toggleOptions}
       IconLeft={!!IconLeft}
-      IconRight={!!IconLeft}
+      IconRight={true}
       variant={inputVariant}
       isOpen={isSelectOpen}
     >
@@ -92,7 +109,7 @@ const SelectInput = forwardRef((props, _) => {
         type="select"
         isOpen={isSelectOpen}
         disabled={disabled}
-        hasCross={hasCross && selectValue.length ? true : false}
+        hasCross={!!(hasCross && selectValue.length)}
         onClickCross={handleClearSelect}
       />
       <SelectValue
@@ -114,6 +131,7 @@ const SelectInput = forwardRef((props, _) => {
           toggleOptions={toggleOptions}
           size={size}
           hasSearch={hasSearch}
+          name={name}
         />
       )}
 

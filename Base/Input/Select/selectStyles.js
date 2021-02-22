@@ -100,6 +100,8 @@ export const SelectText = styled.span`
   color: var(--input-color);
   display: inline-block;
   padding: 0.75em 1em;
+  padding-right: 2.5em;
+
   ${iconSpace};
   ${({ isPlaceholder }) =>
     isPlaceholder &&

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { forwardRef, memo } from 'react';
+import { useState, forwardRef, memo } from 'react';
 import InputFeedback from '../InputFeedback';
 import InputIcons from '../InputIcons';
 import { InputContainer } from '../inputStyles';
@@ -73,7 +72,8 @@ const Textbox = forwardRef((props, ref) => {
         ref={ref}
         type={inputType}
         onChange={handleOnChange}
-        value={inputValue || defaultValue}
+        value={inputValue || defaultValue || ''}
+        defaultValue={undefined}
       />
       <InputFeedback
         disabled={disabled}

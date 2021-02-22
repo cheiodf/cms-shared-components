@@ -21,7 +21,8 @@ const SelectOptions = ({
   setValue,
   toggleOptions,
   multiple,
-  hasSearch
+  hasSearch,
+  name
 }) => {
   const [searchValue, setSearchValue] = useState('');
 
@@ -45,11 +46,10 @@ const SelectOptions = ({
             <Textbox
               margin="0 0 .25em"
               placeholder="Buscar"
-              onChange={e => setSearchValue(e.target.value)}
-              value={searchValue}
               IconRight={SearchIcon}
               size="sm"
-              name="search"
+              onChange={e => setSearchValue(e.target.value)}
+              name={`${name}_search`}
             />
           </SelectInputSearchContainer>
         )}
