@@ -6,7 +6,7 @@ const navigationFlatFunction = () => {
   const itemLoop = routes => {
     routes.map(item => {
       newNavigation.push(item);
-      if (item.subPaths.length) {
+      if (item?.subPaths?.length) {
         item.subPaths.map(() => itemLoop(item.subPaths));
       }
       return true;
