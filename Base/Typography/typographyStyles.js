@@ -13,6 +13,14 @@ const defaultTagProps = {
   a: { size: 1, margin: '', weight: '', color: 'info-variant' }
 };
 
+const weigths = {
+  light: 200,
+  regular: 400,
+  'semi-bold': 600,
+  bold: 700,
+  'extra-bold': 800
+};
+
 const typographyStyles = (
   {
     tag,
@@ -45,14 +53,20 @@ const typographyStyles = (
     ${weight &&
     css`
       font-family: ${`Open Sans${
-        weight !== 'regular' &&
-        ' ' +
-          weight
-            ?.toLowerCase()
-            .split('-')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join('')
+        weight !== 'regular'
+          ? ' ' +
+            weight
+              ?.toLowerCase()
+              .split('-')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join('')
+          : ''
       }`};
+    `};
+
+    ${weight &&
+    css`
+      font-weight: ${weigths[weight]};
     `};
 
     ${size &&
