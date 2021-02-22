@@ -20,27 +20,6 @@ const NavbarAvatar = ({ setTheme, avatarPopover, userInfo }) => {
             ¡Bienvenido!
           </Typography>
           {avatarPopover}
-          {/* <NavAccountPopoverItem>
-            <LayoutOutlineIcon width="16" color="#6E6B6B" />
-            <Typography color="#6E6B6B">Dashboard</Typography>
-          </NavAccountPopoverItem>
-          <NavAccountPopoverItem>
-            <UserOutlineIcon width="16" color="#6E6B6B" />
-            <Typography color="#6E6B6B">Mi cuenta</Typography>
-          </NavAccountPopoverItem>
-          <NavAccountPopoverItem>
-            <DocumentOutlineIcon width="16" color="#6E6B6B" />
-            <Typography color="#6E6B6B">Guía de uso</Typography>
-          </NavAccountPopoverItem>
-          <NavAccountPopoverItem onClick={setTheme}>
-            <LayoutOutlineIcon width="16" color="#6E6B6B" />
-            <Typography color="#6E6B6B">Change Theme</Typography>
-          </NavAccountPopoverItem>
-          <Divider margin=".2rem 0" />
-          <NavAccountPopoverItem onClick={handleLogout}>
-            <SignOutOutlineIcon width="16" color="#6E6B6B" />
-            <Typography color="#6E6B6B">Salir</Typography>
-          </NavAccountPopoverItem> */}
         </NavAccountPopoverContainer>
       }
     >
