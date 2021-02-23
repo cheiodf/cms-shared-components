@@ -1,4 +1,7 @@
 // import 'whatwg-fetch';
+import { parseCookies } from 'nookies';
+
+const cookies = parseCookies();
 
 const parseJSON = response => {
   if (response.status === 204 || response.status === 205) {
@@ -8,9 +11,7 @@ const parseJSON = response => {
 };
 
 const checkStatus = response => {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  }
+  if (response.status >= 200 && response.status < 300) return response;
 
   const error = {
     message: `Bad response from server at ${response.url} => ${response.status}, ${response.statusText}`,
@@ -35,10 +36,10 @@ const checkStatus = response => {
 export const defaultHeaders = () => {
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${localStorage.token || sessionStorage.token}`
+    Authorization: `Bearer ${cookies.token}`
   };
 
-  if (!localStorage.token) delete headers.token_auth;
+  if (!cookies.token) delete headers.token_auth;
 
   return headers;
 };
@@ -71,7 +72,7 @@ export const requestData = (urlRequest, method = 'POST', body = {}) => {
   const options = {
     method,
     headers: {
-      Authorization: `Bearer ${localStorage.token || sessionStorage.token}`
+      Authorization: `Bearer ${cookies.token}`
     },
     body: formData
   };
