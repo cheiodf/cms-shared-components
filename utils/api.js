@@ -1,8 +1,6 @@
 // import 'whatwg-fetch';
 import { parseCookies } from 'nookies';
 
-const cookies = parseCookies();
-
 const parseJSON = response => {
   if (response.status === 204 || response.status === 205) {
     return null;
@@ -34,6 +32,8 @@ const checkStatus = response => {
 };
 
 export const defaultHeaders = () => {
+  const cookies = parseCookies();
+
   const headers = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${cookies.token}`
@@ -59,6 +59,8 @@ const api = async (urlRequest, method = 'GET', body = {}) => {
 };
 
 export const requestData = (urlRequest, method = 'POST', body = {}) => {
+  const cookies = parseCookies();
+
   const formData = new FormData();
 
   for (const name in body) {
