@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InputFileContainer = styled.label`
   position: relative;
-  display: block;
+  display: inline-block;
 `;
 export const InputFileContainerLabel = styled.label`
   position: absolute;
