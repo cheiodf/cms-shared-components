@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 /**
- * @returns {object} - theme, setTheme
+ * @returns {object} - limit, setLimit
  */
 function useLimit() {
   const [limit, setLimit] = useState(
