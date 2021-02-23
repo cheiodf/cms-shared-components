@@ -40,7 +40,7 @@ const SidebarContainer = forwardRef(
     if (!routeConfig?.hasSidebar) return true;
 
     const isSidebarItemVisible = route => {
-      const isRoleValid = route.roles.includes(userRole);
+      const isRoleValid = route?.roles.includes(userRole);
       const isVisible = route.isInSidebar;
       const isEnvironmentValid = route.enviroments
         ? route.enviroments.includes(process.env.NODE_ENV)
