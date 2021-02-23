@@ -4,7 +4,7 @@ import InputFile from '../../Input/InputFile/InputFile';
 import Typography from '../../Typography/Typography';
 import ModalButtons from '../ModalButtons';
 import { EditAvatarModalProps } from '../modalProps';
-import { ImageContainer } from '../modalStyles';
+import { ImageContainer, ImageInputFileContainer } from '../modalStyles';
 
 const EditAvatarModal = ({
   handleClose,
@@ -29,22 +29,24 @@ const EditAvatarModal = ({
 
   return (
     <>
-      <InputFile
-        name="avatar"
-        onChange={handleSetImagePreview}
-        accept="image/*"
-      >
-        <ImageContainer>
-          <AvatarImage
-            src={imagePreview ? URL.createObjectURL(imagePreview[0]) : ''}
-            size="md"
-            isEditable={true}
-          />
-          <Typography color="info-variant" margin=".75rem 0 0 0">
-            Cambiar foto
-          </Typography>
-        </ImageContainer>
-      </InputFile>
+      <ImageInputFileContainer>
+        <InputFile
+          name="avatar"
+          onChange={handleSetImagePreview}
+          accept="image/*"
+        >
+          <ImageContainer>
+            <AvatarImage
+              src={imagePreview ? URL.createObjectURL(imagePreview[0]) : ''}
+              size="md"
+              isEditable={true}
+            />
+            <Typography color="info-variant" margin=".75rem 0 0 0">
+              Cambiar foto
+            </Typography>
+          </ImageContainer>
+        </InputFile>
+      </ImageInputFileContainer>
 
       <ModalButtons
         onClose={handleClose}

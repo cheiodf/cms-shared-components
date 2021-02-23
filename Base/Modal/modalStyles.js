@@ -99,20 +99,6 @@ export const ModalLoaderContainer = styled.div`
   left: 0;
 `;
 
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-// -
-
 export const ModalButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -145,6 +131,11 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img``;
+
+export const ImageInputFileContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 // confirm modal
 export const ModalConfirmTextContainer = styled.div`
