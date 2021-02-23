@@ -1,4 +1,4 @@
-import { useState, forwardRef, memo } from 'react';
+import { useState, forwardRef, memo, useEffect } from 'react';
 import InputFeedback from '../InputFeedback';
 import InputIcons from '../InputIcons';
 import { InputContainer } from '../inputStyles';
@@ -19,11 +19,19 @@ const Textbox = forwardRef((props, ref) => {
     type,
     hasCross,
     onChange,
-    defaultValue
+    defaultValue,
+    setValue,
+    name,
+    getValues
   } = props;
-
   const [inputType, setInputType] = useState(type);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    setInputValue(
+      ref ? (getValues ? getValues(name) : '') : defaultValue || ''
+    );
+  }, [ref, getValues, name, defaultValue]);
 
   const inputVariant =
     !disabled && !isLoading
@@ -41,7 +49,10 @@ const Textbox = forwardRef((props, ref) => {
   };
 
   const handleClearInput = () => {
-    inputValue && setInputValue('');
+    if (inputValue) {
+      setInputValue('');
+      if (setValue) setValue(name, '');
+    }
   };
 
   const handleOnChange = e => {
@@ -72,7 +83,7 @@ const Textbox = forwardRef((props, ref) => {
         ref={ref}
         type={inputType}
         onChange={handleOnChange}
-        value={inputValue || defaultValue || ''}
+        value={ref ? undefined : inputValue}
         defaultValue={undefined}
       />
       <InputFeedback

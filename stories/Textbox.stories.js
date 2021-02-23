@@ -42,7 +42,8 @@ export default {
   args: {
     name: 'email',
     type: 'email',
-    placeholder: 'Email'
+    placeholder: 'Email',
+    defaultValue: 'emailexample@email.com'
   }
   // decorators: [story => <Center>{story()}</Center>],
 };
