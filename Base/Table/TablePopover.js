@@ -13,6 +13,12 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
     setTimeout(() => setOpen(!open), 100); // open delay to solve visual bug when other popover is closing
   };
 
+  const filterOptions = options.filter(({ hidden }) =>
+    hidden ? !hidden(item) : true
+  );
+
+  console.log(filterOptions);
+
   return (
     <TableCell
       options
@@ -24,17 +30,19 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
       <Popover
         containerOrigin={{
           horizontal: 'right',
-          vertical: dataLength - itemIndex > options.length ? 'bottom' : 'top'
+          vertical:
+            dataLength - itemIndex > filterOptions.length ? 'bottom' : 'top'
         }}
         popoverOrigin={{
           horizontal: 'right',
-          vertical: dataLength - itemIndex > options.length ? 'top' : 'bottom'
+          vertical:
+            dataLength - itemIndex > filterOptions.length ? 'top' : 'bottom'
         }}
         paperProps={{ elevation: 15, radius: 20 }}
         responsiveType="bottomsheet"
         popoverContent={
           <div onClick={handleSetOpen}>
-            {options.map(({ title, onClick }, i) => (
+            {filterOptions.map(({ title, onClick }, i) => (
               <PopoverItem key={i} onClick={() => onClick(item)}>
                 {title}
               </PopoverItem>
@@ -42,12 +50,18 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
           </div>
         }
         width={300}
-        open={open}
+        open={filterOptions.length ? open : false}
         setIsOpen={setOpen}
       >
-        <OptionsContainer>
-          <MoreIcon color="var(--table-color)" width={4} title="Más opciones" />
-        </OptionsContainer>
+        {!!filterOptions.length && (
+          <OptionsContainer>
+            <MoreIcon
+              color="var(--table-color)"
+              width={4}
+              title="Más opciones"
+            />
+          </OptionsContainer>
+        )}
       </Popover>
     </TableCell>
   );

@@ -27,6 +27,7 @@ const Table = ({
   path
 }) => {
   const [hasOptionsShadow, setHasOptionsShadow] = useState(false);
+  const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
   const [sortedData, setSortedData] = useState([...data]);
   const [sortByColumn, setSortByColumn] = useState({
@@ -42,7 +43,7 @@ const Table = ({
   // row options shadow
   const setOptionsShadow = useCallback(
     e => {
-      if (options?.length) {
+      if (options?.length && isOptionsVisible) {
         const newValue = e.scrollWidth - e.clientWidth - e.scrollLeft > 20;
         newValue !== hasOptionsShadow && setHasOptionsShadow(newValue);
       }
@@ -54,6 +55,14 @@ const Table = ({
   useEffect(() => {
     setOptionsShadow(tableScroll.current);
   }, [size, options]);
+
+  useEffect(() => {
+    const hasSomeItemOptions = data.some(
+      item =>
+        options.filter(({ hidden }) => (hidden ? !hidden(item) : true)).length
+    );
+    setIsOptionsVisible(hasSomeItemOptions);
+  }, [data, options]);
 
   return (
     <Container>
@@ -71,12 +80,12 @@ const Table = ({
             <TableHead
               columns={columns}
               hasGlobalActions={globalActions?.length}
-              hasOptions={options?.length}
+              hasOptions={isOptionsVisible && options?.length}
               sortByColumn={sortByColumn}
               setSortByColumn={setSortByColumn}
               setSelectedData={setSelectedData}
               setSortedData={setSortedData}
-              hasOptionsShadow={hasOptionsShadow}
+              hasOptionsShadow={isOptionsVisible && hasOptionsShadow}
               isChecked={selectedData.length === data.length}
               data={data}
             />
@@ -90,6 +99,7 @@ const Table = ({
                     dataLength={data.length}
                     index={index}
                     options={options}
+                    isOptionsVisible={isOptionsVisible}
                     hasShadow={hasOptionsShadow}
                     avatar={avatar}
                     hasGlobalActions={globalActions?.length}

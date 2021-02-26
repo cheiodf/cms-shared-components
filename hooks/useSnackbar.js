@@ -6,12 +6,12 @@ import {
 } from '../../store/Snackbars/snackbarActions';
 
 const useSnackbar = (id, animationDuration = 500) => {
+  const [open, setOpen] = useState(true);
   const dispatch = useDispatch();
   const { list } = useSelector(({ snackbars }) => snackbars);
-  const [open, setOpen] = useState(true);
 
   useEffect(() => {
-    if (open === true)
+    if (open === true && id !== 'hola')
       setTimeout(() => handleCloseSnackbar(id, animationDuration), 5000);
   }, [open, id]);
 

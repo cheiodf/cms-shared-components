@@ -17,7 +17,8 @@ const TableRow = ({
   primaryKey,
   selectedData,
   setSelectedData,
-  path
+  path,
+  isOptionsVisible
 }) => {
   const router = useRouter();
 
@@ -73,7 +74,8 @@ const TableRow = ({
           avatar={isAvatarVisible(i) && item[avatar]}
         />
       ))}
-      {options?.length ? (
+
+      {isOptionsVisible && options?.length ? (
         <TablePopover
           options={options}
           hasShadow={hasShadow}
