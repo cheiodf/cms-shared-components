@@ -290,3 +290,29 @@ export const TableSelectLimit = styled.div`
     }
   }
 `;
+
+// item
+export const TableOptionItemContainer = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25em 1.5em;
+
+  :hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+`;
+
+export const TableOptionItemText = styled.span`
+  color: var(--popover-item-color);
+  display: inline-block;
+  width: 100%;
+`;
+
+export const TableOptionItemIcon = styled.span`
+  color: var(--popover-item-color);
+  padding: 1.25em 1.5em;
+  display: inline-block;
+  width: 100%;
+`;

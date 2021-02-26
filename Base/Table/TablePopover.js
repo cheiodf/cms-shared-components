@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { MoreIcon } from '../../../components/Icons';
 import Popover from '../Popover/Popover';
-import PopoverItem from '../Popover/PopoverItem';
 import TableCell from './TableCell';
+import TableOptionItem from './TableOptionItem';
 import { OptionsContainer } from './tableStyles';
 
 const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
@@ -16,8 +16,6 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
   const filterOptions = options.filter(({ hidden }) =>
     hidden ? !hidden(item) : true
   );
-
-  console.log(filterOptions);
 
   return (
     <TableCell
@@ -42,10 +40,14 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
         responsiveType="bottomsheet"
         popoverContent={
           <div onClick={handleSetOpen}>
-            {filterOptions.map(({ title, onClick }, i) => (
-              <PopoverItem key={i} onClick={() => onClick(item)}>
+            {filterOptions.map(({ title, onClick, icon }, i) => (
+              <TableOptionItem
+                key={i}
+                onClick={() => onClick(item)}
+                icon={icon}
+              >
                 {title}
-              </PopoverItem>
+              </TableOptionItem>
             ))}
           </div>
         }
