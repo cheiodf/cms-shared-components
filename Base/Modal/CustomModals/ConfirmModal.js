@@ -15,14 +15,22 @@ const ConfirmModal = ({
   handleClose,
   loading,
   icon: Icon,
-  size
+  size,
+  type
 }) => {
   return (
     <>
       <ModalConfirmTextContainer center={Icon}>
         {Icon && (
           <ModalConfirmIconContainer>
-            <Icon width="50" color="var(--modal-confirm-icon)" />
+            <Icon
+              width="50"
+              color={
+                type === 'danger'
+                  ? 'var(--modal-danger-icon)'
+                  : 'var(--modal-confirm-icon)'
+              }
+            />
           </ModalConfirmIconContainer>
         )}
         <Typography
@@ -44,6 +52,7 @@ const ConfirmModal = ({
         buttonAcceptTitle={buttonAcceptTitle}
         disabled={loading}
         size={size}
+        type={type}
       />
     </>
   );

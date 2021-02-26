@@ -7,7 +7,8 @@ const ModalButtons = ({
   onAccept,
   buttonAcceptTitle,
   disabled,
-  size
+  size,
+  type
 }) => {
   return (
     <ModalButtonsContainer>
@@ -26,7 +27,7 @@ const ModalButtons = ({
       <ButtonContainer fullWidth={size === 'xs' || size === 'sm'}>
         <Button
           onClick={onAccept}
-          variant="primary"
+          variant={type || 'primary'}
           size="sm"
           margin={0}
           disabled={disabled}
