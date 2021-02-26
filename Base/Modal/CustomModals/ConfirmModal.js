@@ -11,7 +11,8 @@ const ConfirmModal = ({
   title,
   description,
   onAccept,
-  buttonAcceptTitle,
+  buttonAcceptTitle = 'ACEPTAR',
+  buttonCloseTitle = 'CANCELAR',
   handleClose,
   loading,
   icon: Icon,
@@ -43,6 +44,7 @@ const ConfirmModal = ({
         onClose={handleClose}
         onAccept={onAccept}
         buttonAcceptTitle={buttonAcceptTitle}
+        buttonCloseTitle={buttonCloseTitle}
         disabled={loading}
         size={size}
         type={type}
