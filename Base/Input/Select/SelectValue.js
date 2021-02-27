@@ -19,6 +19,12 @@ const SelectValue = ({
   iconLeft,
   disabled
 }) => {
+  console.log(
+    'here',
+    typeof selectValue === 'number' ? false : !selectValue.length,
+    selectValue
+  );
+
   if (typeof selectValue === 'number' ? false : !selectValue.length) {
     return (
       <SelectText isPlaceholder={true} iconLeft={iconLeft}>

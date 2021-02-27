@@ -1,4 +1,4 @@
-import { useState, useCallback, memo, forwardRef } from 'react';
+import { useState, useCallback, memo, forwardRef, useEffect } from 'react';
 import InputFeedback from '../InputFeedback';
 import InputIcons from '../InputIcons';
 import SelectOptions from './SelectOptions';
@@ -27,15 +27,19 @@ const SelectInput = forwardRef((props, _) => {
     atChangeValue
   } = props;
 
-  const [selectValue, setSelectValue] = useState(
-    typeof defaultValue === 'number'
-      ? defaultValue
-      : defaultValue.length
-      ? defaultValue
-      : multiple
-      ? []
-      : ''
-  );
+  const [selectValue, setSelectValue] = useState(multiple ? [] : '');
+
+  useEffect(() => {
+    setSelectValue(
+      typeof defaultValue === 'number'
+        ? defaultValue
+        : defaultValue.length
+        ? defaultValue
+        : multiple
+        ? []
+        : ''
+    );
+  }, [defaultValue, setSelectValue]);
 
   const handleIsSelected = useCallback(
     value => {
@@ -95,6 +99,8 @@ const SelectInput = forwardRef((props, _) => {
     : variant;
 
   const isSelectOpen = isOpen && !disabled;
+
+  console.log(defaultValue, selectValue, 'dsds');
 
   return (
     <SelectContainer
