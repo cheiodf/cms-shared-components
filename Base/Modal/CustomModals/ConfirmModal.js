@@ -10,6 +10,7 @@ import {
 const ConfirmModal = ({
   title,
   description,
+  subdescription,
   onAccept,
   buttonAcceptTitle = 'ACEPTAR',
   buttonCloseTitle = 'CANCELAR',
@@ -35,8 +36,15 @@ const ConfirmModal = ({
         >
           {title}
         </Typography>
-        <Typography align={Icon ? 'center' : null} size={Icon ? 0.95 : null}>
+        <Typography
+          align={Icon ? 'center' : null}
+          size={Icon ? 0.95 : null}
+          lineHeight={2.5}
+        >
           {description}
+        </Typography>
+        <Typography align={Icon ? 'center' : null} size={Icon ? 0.85 : null}>
+          {subdescription}
         </Typography>
       </ModalConfirmTextContainer>
 
