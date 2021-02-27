@@ -100,8 +100,6 @@ const SelectInput = forwardRef((props, _) => {
 
   const isSelectOpen = isOpen && !disabled;
 
-  console.log(defaultValue, selectValue, 'dsds');
-
   return (
     <SelectContainer
       onClick={toggleOptions}
