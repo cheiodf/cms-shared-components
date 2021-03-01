@@ -16,11 +16,11 @@ const SnackbarItem = ({ variant, content, action, id, close, index }) => {
   const { closeSnackbar, open } = useSnackbar(id);
 
   useEffect(() => {
-    if (close) closeSnackbar(id);
+    if (close) closeSnackbar();
   }, [close]);
 
   const handleOnClickAction = () => {
-    closeSnackbar(id, animationDuration);
+    closeSnackbar();
     action.onClick && action.onClick();
   };
 
