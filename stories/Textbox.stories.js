@@ -42,8 +42,8 @@ export default {
   args: {
     name: 'email',
     type: 'email',
-    placeholder: 'Email',
-    defaultValue: 'emailexample@email.com'
+    placeholder: 'Email'
+    // defaultValue: 'emailexample@email.com'
   }
   // decorators: [story => <Center>{story()}</Center>],
 };
@@ -89,8 +89,7 @@ export const DatetimeLocalTextbox = Template.bind({});
 DatetimeLocalTextbox.args = {
   placeholder: 'Date',
   name: 'date',
-  type: 'datetime-local',
-  IconRight: CalendarOutlineIcon
+  type: 'datetime-local'
 };
 DatetimeLocalTextbox.storyName = 'Date time local Textbox';
 

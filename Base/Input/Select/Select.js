@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 // components
 import { Controller } from 'react-hook-form';
 import SelectInput from './SelectInput';
@@ -12,13 +12,13 @@ import { defaultProps, props } from './selectProps';
 
 const Select = props => {
   const {
-    defaultValue,
     control,
     name,
     rules,
     margin,
     isLoading,
-    disabled
+    disabled,
+    getValues
   } = props;
 
   const {
@@ -31,6 +31,8 @@ const Select = props => {
     () => !disabled && !isLoading && setIsComponentVisible(!isComponentVisible),
     [isComponentVisible, disabled, isLoading]
   );
+
+  const getVal = (getValues && getValues(name)) || null;
 
   return (
     <InputContainer ref={reference} margin={margin} {...props}>
@@ -46,8 +48,8 @@ const Select = props => {
           }
           control={control}
           name={name}
-          defaultValue={defaultValue}
           rules={rules}
+          defaultValue={getVal}
         />
       ) : (
         <SelectInput

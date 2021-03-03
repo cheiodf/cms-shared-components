@@ -26,6 +26,7 @@ const Textbox = forwardRef((props, ref) => {
   } = props;
   const [inputType, setInputType] = useState(type);
   const [inputValue, setInputValue] = useState('');
+  const [isfocus, setIsFoucus] = useState(false);
 
   useEffect(() => {
     setInputValue(
@@ -66,6 +67,7 @@ const Textbox = forwardRef((props, ref) => {
       disabled={disabled}
       isLoading={isLoading}
       size={size}
+      name={name}
     >
       <InputIcons
         IconLeft={IconLeft}
@@ -83,6 +85,7 @@ const Textbox = forwardRef((props, ref) => {
         ref={ref}
         type={inputType}
         onChange={handleOnChange}
+        hasPlaceholder={inputValue} // for date inputs
         value={ref ? undefined : inputValue}
         defaultValue={undefined}
       />

@@ -24,22 +24,28 @@ const SelectInput = forwardRef((props, _) => {
     rules,
     hasCross,
     hasSearch,
-    atChangeValue
+    atChangeValue,
+    getValues,
+    control
   } = props;
 
-  const [selectValue, setSelectValue] = useState(multiple ? [] : '');
+  const emptyValue = multiple ? [] : '';
+  const [selectValue, setSelectValue] = useState(emptyValue);
+
+  const getVal = (getValues && getValues(name)) || null;
 
   useEffect(() => {
-    setSelectValue(
-      typeof defaultValue === 'number'
+    const val =
+      control && getValues
+        ? getVal
+        : typeof defaultValue === 'number'
         ? defaultValue
         : defaultValue.length
         ? defaultValue
-        : multiple
-        ? []
-        : ''
-    );
-  }, [defaultValue, setSelectValue]);
+        : emptyValue;
+
+    setSelectValue(val || emptyValue);
+  }, [defaultValue, setSelectValue, getValues, control, name, getVal]);
 
   const handleIsSelected = useCallback(
     value => {

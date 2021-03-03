@@ -7,7 +7,8 @@ import {
   ArrowDownIcon,
   EyeIcon,
   EyeCrossedIcon,
-  CrossCircleOutlineIcon
+  CrossCircleOutlineIcon,
+  CalendarOutlineIcon
 } from '../../../components/Icons';
 
 const InputIcons = ({
@@ -50,6 +51,10 @@ const InputIcons = ({
           ) : (
             <EyeCrossedIcon width="1em" color="var(--input-icon)" />
           )}
+        </IconContainer>
+      ) : type.includes('date') ? (
+        <IconContainer position="right" type={type}>
+          <CalendarOutlineIcon width="1em" color="var(--input-icon)" />
         </IconContainer>
       ) : (
         IconRight && (
