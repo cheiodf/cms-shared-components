@@ -12,8 +12,6 @@ const Avatar = forwardRef(({ src, onChange, isEditable, size, name }, ref) => {
   const [imagePreview, setImagePreview] = useState({});
   const [image, setImage] = useState('');
 
-  const defaultSrc = '/static/images/defaultAvatar.png';
-
   const handleOnChange = e => {
     if (e.target.files[0]) {
       const img = e.target.files;
@@ -42,14 +40,10 @@ const Avatar = forwardRef(({ src, onChange, isEditable, size, name }, ref) => {
 
   return isEditable ? (
     <InputFile ref={ref} name={name} onChange={handleOnChange} accept="image/*">
-      <AvatarImage size={size} isEditable src={image || src || defaultSrc} />
+      <AvatarImage size={size} isEditable src={image || src} />
     </InputFile>
   ) : (
-    <AvatarImage
-      size={size}
-      isEditable={false}
-      src={image || src || defaultSrc}
-    />
+    <AvatarImage size={size} isEditable={false} src={image || src} />
   );
 });
 

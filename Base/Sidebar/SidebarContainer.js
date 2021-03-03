@@ -49,6 +49,10 @@ const SidebarContainer = forwardRef(
       return isRoleValid && isVisible && isEnvironmentValid;
     };
 
+    const navigationFilter = navigation.filter(route =>
+      isSidebarItemVisible(route)
+    );
+
     return (
       <>
         <SidebarOverlay
@@ -68,21 +72,16 @@ const SidebarContainer = forwardRef(
           </SidebarLogoContainer>
 
           <SidebarList>
-            {navigation.map(route => {
-              if (isSidebarItemVisible(route))
-                return (
-                  <SidebarItem
-                    key={route.title}
-                    path={route.path}
-                    title={route.title}
-                    icon={route.icon}
-                    active={route.path === router.pathname}
-                    closeSidebar={() => setIsSidebarOpen(false)}
-                  />
-                );
-
-              return null;
-            })}
+            {navigationFilter.map(route => (
+              <SidebarItem
+                key={route.title}
+                path={route.path}
+                title={route.title}
+                icon={route.icon}
+                active={route.path === router.pathname}
+                closeSidebar={() => setIsSidebarOpen(false)}
+              />
+            ))}
             <SidebarItem
               title="Notificaciones"
               icon={BellIcon}

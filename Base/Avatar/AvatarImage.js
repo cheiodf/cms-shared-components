@@ -8,6 +8,8 @@ import {
 import { EditIcon } from '../../../components/Icons';
 
 const AvatarImage = ({ size, isEditable, src }) => {
+  const defaultSrc = '/static/images/defaultAvatar.png';
+
   return (
     <AvatarContainer size={size}>
       {isEditable && (
@@ -17,7 +19,7 @@ const AvatarImage = ({ size, isEditable, src }) => {
           </ImageIconWrapper>
         </ImageBackdrop>
       )}
-      <Image src={src} />
+      <Image src={src || defaultSrc} />
     </AvatarContainer>
   );
 };
