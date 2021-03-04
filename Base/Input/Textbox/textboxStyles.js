@@ -5,8 +5,9 @@ export const Input = styled.input`
   ${input};
 
   :not(:focus) {
-    ${({ hasPlaceholder }) =>
+    ${({ hasPlaceholder, type }) =>
       !hasPlaceholder &&
+      type.includes('date') &&
       css`
         transition: none;
         color: transparent;

@@ -26,7 +26,6 @@ const Textbox = forwardRef((props, ref) => {
   } = props;
   const [inputType, setInputType] = useState(type);
   const [inputValue, setInputValue] = useState('');
-  const [isfocus, setIsFoucus] = useState(false);
 
   useEffect(() => {
     setInputValue(
