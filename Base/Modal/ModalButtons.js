@@ -33,7 +33,7 @@ const ModalButtons = ({
       {buttonAcceptTitle && (
         <ButtonContainer fullWidth={size === 'xs' || size === 'sm'}>
           <Button
-            onClick={onAccept}
+            onClick={() => onAccept(onClose)}
             variant={type === 'confirm' ? 'primary' : type}
             size="sm"
             margin={0}
