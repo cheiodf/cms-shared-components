@@ -54,7 +54,7 @@ const NotificationsContainer = ({
       }
     >
       <Hidden down={!showInResponsive ? 'sm' : null}>
-        <Badge content={list.length} variant="danger" size="xs">
+        <Badge content={list.filter(item => item.read === false).length} variant="danger" size="xs">
           <BellIcon width={20} color="white" />
         </Badge>
       </Hidden>
