@@ -1,12 +1,17 @@
 import styled, { css } from 'styled-components';
 
-export const FormContainer = styled.form``;
+export const FormContainer = styled.form`
+  height: 100%;
+`;
 
 export const FormFieldset = styled.fieldset`
   border: none;
   padding: 0;
   max-width: 100%;
-  display: contents;
+  /* display: contents; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   :disabled {
     * {
