@@ -23,3 +23,10 @@ export const FormFieldset = styled.fieldset`
     }
   }
 `;
+
+export const ButtonFlexEndContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: auto;
+`;
