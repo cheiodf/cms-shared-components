@@ -31,7 +31,7 @@ const NavbarAvatar = ({ setTheme, avatarPopover, userInfo }) => {
         />
         <Hidden down="md">
           <Typography color="#fff" maxLines={1}>
-            {userInfo?.name.split(' ')[0] || 'John Doe'}
+            {userInfo?.name.split(' ')[0]}
           </Typography>
         </Hidden>
       </NavAvatarContainer>

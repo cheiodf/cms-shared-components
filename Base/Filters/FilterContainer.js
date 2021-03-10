@@ -14,7 +14,8 @@ const FilterContainer = ({
   loading,
   onClean,
   open,
-  setOpen
+  setOpen,
+  disableClearButton
 }) => {
   return (
     <Popover
@@ -47,8 +48,8 @@ const FilterContainer = ({
                 onClick={onClean}
                 weight="semi-bold"
                 variant="gray"
-                isLoading={loading}
                 size="sm"
+                disabled={disableClearButton || loading}
               >
                 Limpiar
               </Button>

@@ -3,9 +3,18 @@ import { memo } from 'react';
 import { Btn, ButtonIconContainer } from './buttonStyles';
 // props
 import { props, defaultProps } from './buttonProps';
+import Loader from '../../../components/Loader/Loader';
 
 const Button = props => {
-  const { isLoading, children, onClick, disabled, IconLeft, IconRight } = props;
+  const {
+    isLoading,
+    loaderColor = '#fff',
+    children,
+    onClick,
+    disabled,
+    IconLeft,
+    IconRight
+  } = props;
 
   return (
     <Btn {...props} onClick={!isLoading && !disabled ? onClick : null}>
@@ -20,7 +29,7 @@ const Button = props => {
         </ButtonIconContainer>
       )}
 
-      <span>{isLoading ? 'loading...' : children}</span>
+      <span>{isLoading ? <Loader color={loaderColor} /> : children}</span>
     </Btn>
   );
 };
