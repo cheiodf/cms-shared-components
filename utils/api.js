@@ -44,18 +44,27 @@ export const defaultHeaders = () => {
   return headers;
 };
 
-const api = async (urlRequest, method = 'GET', body = {}) => {
+const api = async (
+  urlRequest,
+  method = 'GET',
+  body = {},
+  token = '',
+  abroute = false
+) => {
   const options = {
     method: method,
     headers: defaultHeaders(),
     body: JSON.stringify(body)
   };
 
+  if (token)
+    options.headers = { ...options.headers, Authorization: `Bearer ${token}` };
+
   if (method === 'GET') delete options.body;
 
-  return fetch(`${process.env.NEXT_PUBLIC_API_URL}${urlRequest}`, options)
-    .then(checkStatus)
-    .then(parseJSON);
+  if (!abroute) urlRequest = `${process.env.NEXT_PUBLIC_API_URL}${urlRequest}`;
+
+  return fetch(urlRequest, options).then(checkStatus).then(parseJSON);
 };
 
 export const requestData = (urlRequest, method = 'POST', body = {}) => {

@@ -6,7 +6,6 @@ import NavbarAvatar from './NavbarAvatar';
 import NavbarResponsiveIcons from './NavbarResponsiveIcons';
 import { navigationFlat } from '../../utils/navigationFlat';
 import { useRouter } from 'next/router';
-import useHasRoleAccess from '../../hooks/useHasRoleAccess';
 
 const NavbarContainer = ({
   setTheme,
@@ -22,8 +21,6 @@ const NavbarContainer = ({
   const routeConfig = navigationFlat.filter(
     page => page.path === router.pathname
   )[0];
-
-  useHasRoleAccess(routeConfig);
 
   if (!routeConfig?.hasNav) return true;
 

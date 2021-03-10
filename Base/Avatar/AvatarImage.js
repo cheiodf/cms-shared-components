@@ -19,7 +19,7 @@ const AvatarImage = ({ size, isEditable, src }) => {
           </ImageIconWrapper>
         </ImageBackdrop>
       )}
-      <Image src={src || defaultSrc} />
+      <Image src={src || defaultSrc} cache={false} debounce={10} />
     </AvatarContainer>
   );
 };
