@@ -18,7 +18,7 @@ const useSnackbar = (id, animationDuration = 500) => {
     if (open === true) {
       setOpen(0.5);
       setTimeout(() => {
-        // dispatch(closeSnackbar({ id }));
+        dispatch(closeSnackbar({ id }));
         setOpen(false);
       }, animationDuration); // closing delay for css animation
     }
