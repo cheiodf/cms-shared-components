@@ -69,7 +69,7 @@ const TableRow = ({
         <TableCell
           key={key}
           type={type}
-          value={value ? value(item[key]) : item[key]}
+          value={value ? value(item[key], item) : item[key]}
           hasAvatar={isAvatarVisible(i)}
           avatar={isAvatarVisible(i) && item[avatar]}
         />

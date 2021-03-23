@@ -91,6 +91,10 @@ const Table = ({
             />
             <TableBody>
               {sortedData.map((el, index) => {
+                let hasOptions = true;
+                if (Object.prototype.hasOwnProperty.call(el, 'isTheOwner'))
+                  if (!el.isTheOwner) hasOptions = false;
+
                 return (
                   <TableRow
                     key={el[primaryKey]}
@@ -98,7 +102,7 @@ const Table = ({
                     item={el}
                     dataLength={data.length}
                     index={index}
-                    options={options}
+                    options={hasOptions ? options : []}
                     isOptionsVisible={isOptionsVisible}
                     hasShadow={hasOptionsShadow}
                     avatar={avatar}

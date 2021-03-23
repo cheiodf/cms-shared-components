@@ -233,8 +233,8 @@ export default {
 
 const getGridProps = props =>
   Object.keys(props)
-    .filter(key => !key.startsWith('item'))
-    .reduce((obj, key) => {
+    ?.filter(key => !key.startsWith('item'))
+    ?.reduce((obj, key) => {
       obj[key] = props[key];
       return obj;
     }, {});

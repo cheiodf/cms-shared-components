@@ -20,7 +20,7 @@ const filterColumns = (...columns) => {
     { key: 'images', title: 'Miembros', type: 'images' }
   ];
 
-  return cols.filter(col => columns.includes(col.key));
+  return cols?.filter(col => columns.includes(col.key));
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
