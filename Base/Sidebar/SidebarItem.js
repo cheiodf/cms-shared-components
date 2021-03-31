@@ -36,23 +36,25 @@ const SidebarItem = ({
 
   return (
     <Hidden {...hiddenProps}>
-      <Container>
-        <SidebarItemContainer
-          active={active}
-          onClick={handleOnClick}
-          badge={badge}
-        >
-          <SidebarItemIcon>
-            <Icon width="100%" color="#8898AA" />
-          </SidebarItemIcon>
-          <Typography color="#8898AA" weight="semi-bold" size={0.95}>
-            {title}
-          </Typography>
-          <SidebartItemBadgeContainer>
-            <Badge content={badge} variant="danger" size="xs" />
-          </SidebartItemBadgeContainer>
-        </SidebarItemContainer>
-      </Container>
+      <li>
+        <Container>
+          <SidebarItemContainer
+            active={active}
+            onClick={handleOnClick}
+            badge={badge}
+          >
+            <SidebarItemIcon>
+              <Icon width="100%" color="#8898AA" />
+            </SidebarItemIcon>
+            <Typography color="#8898AA" weight="semi-bold" size={0.875}>
+              {title}
+            </Typography>
+            <SidebartItemBadgeContainer>
+              <Badge content={badge} variant="danger" size="xs" />
+            </SidebartItemBadgeContainer>
+          </SidebarItemContainer>
+        </Container>
+      </li>
     </Hidden>
   );
 };

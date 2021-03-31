@@ -17,7 +17,6 @@ const TableHeader = ({ globalActions, title, selectedData }) => {
             <Button
               key={i}
               onClick={() => onClick(selectedData)}
-              size="sm"
               {...buttonProps}
               disabled={!selectedData.length || buttonProps?.disabled}
             >

@@ -8,9 +8,9 @@ const defaultTagProps = {
   h4: { size: 1, margin: '0 0 0.35em 0', weight: 'bold' },
   h5: { size: 0.85, margin: '0 0 0.35em 0', weight: 'bold' },
   h6: { size: 0.75, margin: '0 0 0.35em 0', weight: 'bold' },
-  p: { size: 1, margin: '', weight: '' },
-  span: { size: 0.85, margin: '', weight: '' },
-  a: { size: 1, margin: '', weight: '', color: 'info-variant' }
+  p: { size: 0.875, margin: '', weight: '' },
+  span: { size: 0.8, margin: '', weight: '' },
+  a: { size: 0.875, margin: '', weight: '', color: 'info-variant' }
 };
 
 const weigths = {

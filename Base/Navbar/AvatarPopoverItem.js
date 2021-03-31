@@ -22,7 +22,7 @@ const AvatarPopoverItem = ({
   return (
     <Container>
       <NavAccountPopoverItem onClick={onClick}>
-        <Icon width="16" color="#6E6B6B" />
+        <Icon width="14" color="#6E6B6B" />
         <Typography color="#6E6B6B">{title}</Typography>
       </NavAccountPopoverItem>
     </Container>

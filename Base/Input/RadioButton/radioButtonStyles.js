@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { InputContainer } from '../inputStyles';
+import { InputContainer, inputSize } from '../inputStyles';
 
 export const RadioButtonContainer = styled(InputContainer)`
   flex-direction: column;
@@ -19,6 +19,8 @@ export const RadioButtonItemsContainer = styled.div`
 
 export const RadioButtonItemContainer = styled.label`
   --size: 1em;
+  font-size: ${({ size = 'md' }) => inputSize[size]};
+
   padding: 0.25em 0;
   cursor: pointer;
   min-height: var(--size);

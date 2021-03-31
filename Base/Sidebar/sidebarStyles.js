@@ -6,7 +6,7 @@ export const SidebarWrapper = styled.nav`
   grid-area: sidebar;
   position: sticky;
   top: 0;
-  width: 270px;
+  width: 250px;
   height: 100vh;
   background-color: var(--sidebar-bg);
   box-shadow: 0 0 2rem 0 rgb(136 152 170 / 5%);
@@ -90,7 +90,7 @@ export const SidebarList = styled.ul`
   gap: 0.1rem;
 `;
 
-export const SidebarItemContainer = styled.li`
+export const SidebarItemContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;

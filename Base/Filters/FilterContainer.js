@@ -39,7 +39,6 @@ const FilterContainer = ({
                 type="submit"
                 weight="semi-bold"
                 isLoading={loading}
-                size="sm"
               >
                 Aplicar
               </Button>
@@ -48,7 +47,6 @@ const FilterContainer = ({
                 onClick={onClean}
                 weight="semi-bold"
                 variant="gray"
-                size="sm"
                 disabled={disableClearButton || loading}
               >
                 Limpiar

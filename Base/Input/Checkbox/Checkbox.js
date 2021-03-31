@@ -8,10 +8,10 @@ import {
 import { CheckIcon } from '../../../../components/Icons';
 
 const Checkbox = forwardRef((props, ref) => {
-  const { disabled, title, titleProps, id } = props;
+  const { disabled, title, titleProps, id, size } = props;
 
   return (
-    <CheckboxItemContainer disabled={disabled}>
+    <CheckboxItemContainer disabled={disabled} size={size}>
       <CheckboxInput type="checkbox" ref={ref} {...props} />
 
       <CheckboxText

@@ -19,7 +19,7 @@ const BreadcrumbLink = ({ title, path, icon: Icon, active }) => {
             {Icon && (
               <Icon
                 color={`var(--breadcrumb-${active ? 'primary' : 'secondary'})`}
-                width="16"
+                width="14"
               />
             )}
             <Typography

@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
-const inputSize = {
+export const inputSize = {
   xs: '.75rem',
-  sm: '.9rem',
-  md: '1rem',
-  lg: '1.15rem',
-  xl: '1.3rem'
+  sm: '.8rem',
+  md: '.875rem',
+  lg: '1rem',
+  xl: '1.2rem'
 };
 
 export const InputContainer = styled.label`

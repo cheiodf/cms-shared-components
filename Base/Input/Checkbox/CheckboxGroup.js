@@ -19,7 +19,8 @@ const CheckboxGroup = forwardRef((props, ref) => {
     direction,
     success,
     error,
-    defaultValue
+    defaultValue,
+    name
   } = props;
 
   const [value, setValue] = useState(defaultValue);
@@ -39,7 +40,7 @@ const CheckboxGroup = forwardRef((props, ref) => {
       disabled={disabled}
       isLoading={isLoading}
       size={size}
-      htmlFor=""
+      htmlFor={name}
     >
       <CheckboxTitle>{placeholder}</CheckboxTitle>
       <CheckboxItemsContainer direction={direction}>

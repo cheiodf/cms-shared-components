@@ -5,7 +5,7 @@ import Popover from '../Popover/Popover';
 import Typography from '../Typography/Typography';
 import { NavAccountPopoverContainer, NavAvatarContainer } from './navbarStyles';
 
-const NavbarAvatar = ({ setTheme, avatarPopover, userInfo }) => {
+const NavbarAvatar = ({ avatarPopover, userInfo }) => {
   return (
     <Popover
       width={200}

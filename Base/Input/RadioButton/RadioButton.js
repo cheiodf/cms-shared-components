@@ -19,7 +19,8 @@ const RadioButton = forwardRef((props, ref) => {
     direction,
     success,
     error,
-    defaultValue
+    defaultValue,
+    name
   } = props;
 
   const [value, setValue] = useState(defaultValue);
@@ -30,7 +31,7 @@ const RadioButton = forwardRef((props, ref) => {
       disabled={disabled}
       isLoading={isLoading}
       size={size}
-      htmlFor=""
+      htmlFor={name}
     >
       <RadioButtonTitle>{placeholder}</RadioButtonTitle>
       <RadioButtonItemsContainer direction={direction}>

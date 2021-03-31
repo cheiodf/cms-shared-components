@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MoreIcon } from '../../../components/Icons';
 import Popover from '../Popover/Popover';
 import TableCell from './TableCell';
@@ -7,6 +7,16 @@ import { OptionsContainer } from './tableStyles';
 
 const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
   const [open, setOpen] = useState(false);
+  const [animationStatus, setAnimationStatus] = useState(false);
+
+  useEffect(() => {
+    if (!open) {
+      setAnimationStatus(0.5);
+      setTimeout(() => setAnimationStatus(false), 300); // closing delay for css animation
+    } else {
+      setAnimationStatus(true);
+    }
+  }, [open]);
 
   const handleSetOpen = e => {
     e.stopPropagation();
@@ -16,12 +26,11 @@ const TablePopover = ({ options, item, hasShadow, dataLength, itemIndex }) => {
   const filterOptions = options.filter(({ hidden }) =>
     hidden ? !hidden(item) : true
   );
-
   return (
     <TableCell
       options
       hasShadow={hasShadow}
-      isPopoverOpen={open}
+      isPopoverOpen={animationStatus}
       onClick={handleSetOpen}
       hasDefaultValue={false}
     >

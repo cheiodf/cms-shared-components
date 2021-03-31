@@ -15,7 +15,7 @@ const Header = ({ breadcrumbProps, buttons, title, children }) => (
     <HeaderSubcontainer>
       <HeaderRow>
         <HeaderRouteDataContainer>
-          <Typography color="#FFF" tag="h1" size={1.4}>
+          <Typography color="#FFF" tag="h1" size={1.25} margin={0}>
             {title}
           </Typography>
 

@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 
 const btnSize = {
   xs: '.75rem',
-  sm: '.9rem',
-  md: '1rem',
-  lg: '1.15rem',
-  xl: '1.3rem'
+  sm: '.8rem',
+  md: '.875rem',
+  lg: '1rem',
+  xl: '1.2rem'
 };
 
 export const Btn = styled.button`
@@ -60,10 +60,10 @@ export const Btn = styled.button`
           }
         `}
 
-  ${({ outline, color }) =>
+  ${({ outline, color, border }) =>
     outline
       ? css`
-          border: 0.0625em solid ${color || 'var(--main-bg)'};
+          border: 0.0625em solid ${border || color || 'var(--main-bg)'};
           color: ${color || 'var(--main-bg)'};
           background-color: transparent;
         `

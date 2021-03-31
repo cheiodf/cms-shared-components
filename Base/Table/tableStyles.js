@@ -2,11 +2,15 @@ import styled, { css } from 'styled-components';
 import { zIndex } from '../../../cms-shared-components/utils/constants//zIndex';
 import { SelectContainer, SelectText } from '../Input/Select/selectStyles';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  font-size: 0.875rem;
+`;
 
 export const TableFullContainer = styled.div`
   overflow-x: auto;
   width: 100%;
+  padding-top: 150px;
+  margin-top: -150px;
 `;
 
 export const TableContainer = styled.table`
@@ -49,6 +53,8 @@ const fixedLastColumn = css`
 
 export const TableHeadCell = styled.th`
   padding: 1rem 1.5rem;
+  font-size: 1em;
+
   :first-child {
     padding-left: 2rem;
   }
@@ -126,6 +132,7 @@ export const TableBodyRow = styled(TableHeadRow)`
 
 export const TableBodyCell = styled.td`
   padding: 1rem 1.5rem;
+  font-size: 1em;
   :first-child {
     padding-left: 2rem;
   }
@@ -269,7 +276,7 @@ export const TableSelectLimit = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  max-width: 150px;
+  max-width: 100px;
   width: 100%;
   margin-bottom: 1rem;
 

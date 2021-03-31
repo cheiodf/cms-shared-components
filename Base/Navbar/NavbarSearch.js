@@ -32,7 +32,7 @@ const NavbarSearch = ({ open, toggleSearch }) => {
         <NavSearchSubcontainer>
           <Hidden up="sm">
             <NavSearchCloseIcon onClick={toggleSearch}>
-              <CrossIcon width="16" color="#fff" />
+              <CrossIcon width="15" color="#fff" />
             </NavSearchCloseIcon>
           </Hidden>
 
@@ -43,7 +43,7 @@ const NavbarSearch = ({ open, toggleSearch }) => {
             ref={register}
           />
           <Button rounded variant="white" margin="0" type="submit">
-            <SearchIcon width="15" color="var(--search-secondary-color)" />
+            <SearchIcon width="14" color="var(--search-secondary-color)" />
           </Button>
         </NavSearchSubcontainer>
       </Form>

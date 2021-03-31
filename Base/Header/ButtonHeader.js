@@ -16,7 +16,6 @@ const ButtonHeader = ({ children, path, isExternal, ...props }) => {
       <Button
         color="#7678ED"
         variant="white"
-        size="sm"
         weight="semi-bold"
         padding="0.5em 1em"
         {...props}

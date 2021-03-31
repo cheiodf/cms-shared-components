@@ -46,6 +46,7 @@ export const Image = styled(Img)`
   height: 100%;
   border-radius: 100%;
   object-fit: cover;
+  user-select: none;
 `;
 
 export const ImageIconWrapper = styled.div`

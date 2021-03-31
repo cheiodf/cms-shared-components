@@ -66,7 +66,7 @@ const SidebarContainer = forwardRef(
 
           <SidebarLogoContainer>
             <Link href={home}>
-              <SidebarLogo src={logo} />
+              <SidebarLogo src={logo} onClick={() => setIsSidebarOpen(false)} />
             </Link>
             <Divider fullWidth={false} size={1.5} />
           </SidebarLogoContainer>

@@ -51,6 +51,7 @@ const Pagination = ({ totalPages, actualPage, onChange }) => {
           rounded
           size="xs"
           color={actualPage !== page ? 'var(--pagination-btn-color)' : null}
+          border="var(--btn-light)"
         >
           {page}
         </Button>

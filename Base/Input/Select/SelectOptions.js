@@ -47,7 +47,6 @@ const SelectOptions = ({
               margin="0 0 .25em"
               placeholder="Buscar"
               IconRight={SearchIcon}
-              size="sm"
               onChange={e => setSearchValue(e.target.value)}
               name={`${name}_search`}
             />

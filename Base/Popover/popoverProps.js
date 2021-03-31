@@ -16,7 +16,14 @@ export const props = {
   closeOnClickPopover: PropTypes.bool,
   open: PropTypes.bool,
   setOpen: PropTypes.func,
-  paperProps: PropTypes.object
+  paperProps: PropTypes.object,
+  responsiveType: PropTypes.oneOf([
+    'sidebarLeft',
+    'sidebarRight',
+    'sidebarFullWidthLeft',
+    'sidebarFullWidthRight',
+    'bottomsheet'
+  ])
 };
 
 export const defaultProps = {
