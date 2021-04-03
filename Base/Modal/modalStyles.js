@@ -153,3 +153,17 @@ export const ModalConfirmIconContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+// profile petitions modal
+
+export const PetitionContainer = styled.div`
+  margin-top: 3rem;
+  overflow: hidden;
+  &:last-child .modalStyles__PetitionDivider{
+    opacity: 0;
+  }
+`;
+
+export const PetitionButtons = styled.div`
+  display: flex;
+`;
