@@ -1,4 +1,4 @@
-import { useMemo, useEffect, memo } from 'react';
+import { useMemo, useEffect, memo, useRef } from 'react';
 import {
   SnackbarItemContainer,
   SnackbarCrossIconContainer,
@@ -14,9 +14,16 @@ import useSnackbar from '../../hooks/useSnackbar';
 const SnackbarItem = ({ variant, content, action, id, close, index }) => {
   const animationDuration = useMemo(() => 500, []);
   const { closeSnackbar, open } = useSnackbar(id);
+  const unmounted = useRef(false);
 
   useEffect(() => {
-    if (close) closeSnackbar();
+    return () => {
+      unmounted.current = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (close && !unmounted.current) closeSnackbar();
   }, [close]);
 
   const handleOnClickAction = () => {

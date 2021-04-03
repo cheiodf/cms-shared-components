@@ -22,7 +22,7 @@ function useAuth(action = 'RINA', roles = false) {
 
     if (!token && action === 'RINA') router.push('/');
     else if (token && action === 'RIIA') router.push('/dashboard');
-  }, [token]);
+  }, [token, action, router, roles, getRouteRoles]);
 
   return {
     isAuth: !!token

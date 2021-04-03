@@ -1,4 +1,4 @@
-import { useEffect, useMemo, memo, useCallback } from 'react';
+import { useEffect, useMemo, memo, useCallback, useRef } from 'react';
 import { props, defaultProps } from './popoverProps';
 import useComponentVisible from '../../../cms-shared-components/hooks/useComponentVisible';
 import Paper from '../Paper/Paper';
@@ -25,6 +25,14 @@ const Popover = ({
   const initialOpenState = useMemo(() => (openPropValidate ? open : false), []); // if the prop open is received it is used as the default state of the popover
   const animationTime = useMemo(() => 200, []);
 
+  const unmounted = useRef(false);
+
+  useEffect(() => {
+    return () => {
+      unmounted.current = true;
+    };
+  }, []);
+
   const handleSetExternalOpen = useCallback(
     value => setIsOpen && setIsOpen(value),
     []
@@ -50,10 +58,12 @@ const Popover = ({
   };
 
   useEffect(() => {
-    const hasToUpdateLocalState =
-      open !== isPopoverOpen && isPopoverOpen !== 0.5 && openPropValidate;
+    if (!unmounted.current) {
+      const hasToUpdateLocalState =
+        open !== isPopoverOpen && isPopoverOpen !== 0.5 && openPropValidate;
 
-    hasToUpdateLocalState && handleToggleOpen(!open); // update isPopoverOpen state when open prop changes
+      hasToUpdateLocalState && handleToggleOpen(!open); // update isPopoverOpen state when open prop changes
+    }
   }, [open, isPopoverOpen]);
 
   return (
