@@ -4,7 +4,7 @@ import {
   NotificationAvatarContainer,
   NotificationDateContainer,
   NotificationItemContainer,
-  // NotificationItemLink,
+  NotificationItemLink,
   NotificationTextContainer
 } from './notificationsStyles';
 
@@ -13,7 +13,7 @@ const NotificationItem = ({
   sender,
   title,
   createdAt,
-  // destination,
+  destination,
   closePopover
 }) => {
   const timeSince = date => {
@@ -45,33 +45,32 @@ const NotificationItem = ({
   };
 
   return (
-    // FIXME: uncomment NotificationItemLink
-    // <NotificationItemLink href={destination}>
-    <a>
-      <NotificationItemContainer onClick={closePopover}>
-        <NotificationAvatarContainer>
-          <Avatar
-            isEditable={false}
-            src={image || '/static/images/defaultNotificationImage.png'}
-            size="xs"
-          />
-        </NotificationAvatarContainer>
-        <NotificationTextContainer>
-          <Typography maxLines={1} color="#212529" weight="bold" size={0.95}>
-            {sender.name}
-          </Typography>
-          <Typography maxLines={2} color="#B2B2B2" tag="span">
-            {title}
-          </Typography>
-        </NotificationTextContainer>
-        <NotificationDateContainer>
-          <Typography tag="span" weight="semi-bold" color="#B2B2B2">
-            {timeSince(new Date(createdAt).getTime())}
-          </Typography>
-        </NotificationDateContainer>
-      </NotificationItemContainer>
-    </a>
-    // </NotificationItemLink>
+    <NotificationItemLink href={destination}>
+      <a>
+        <NotificationItemContainer onClick={closePopover}>
+          <NotificationAvatarContainer>
+            <Avatar
+              isEditable={false}
+              src={image || '/static/images/defaultNotificationImage.png'}
+              size="xs"
+            />
+          </NotificationAvatarContainer>
+          <NotificationTextContainer>
+            <Typography maxLines={1} color="#212529" weight="bold" size={0.95}>
+              {sender.name}
+            </Typography>
+            <Typography maxLines={2} color="#B2B2B2" tag="span">
+              {title}
+            </Typography>
+          </NotificationTextContainer>
+          <NotificationDateContainer>
+            <Typography tag="span" weight="semi-bold" color="#B2B2B2">
+              {timeSince(new Date(createdAt).getTime())}
+            </Typography>
+          </NotificationDateContainer>
+        </NotificationItemContainer>
+      </a>
+    </NotificationItemLink>
   );
 };
 
