@@ -27,34 +27,46 @@ const NotificationsContainer = ({
       responsiveType="sidebarFullWidthLeft"
       popoverContent={
         <NotificationsPopoverContainer>
-          <NotificationCount>
-            <Hidden up={!showInResponsive ? 'sm' : null}>
-              <Typography
-                size={1.5}
-                color="#000"
-                weight="bold"
-                margin="0 0 1.5rem"
-              >
-                Notificaciones
-              </Typography>
-            </Hidden>
-            <Typography size={0.9} color="#B2B2B2" weight="bold">
-              Tienes <span>{list.length}</span> notificaciones
+          {!list?.length ? (
+            <Typography align="center" margin="1rem 0 0" weight="semi-bold">
+              Aun no tienes notificaciones
             </Typography>
-          </NotificationCount>
+          ) : (
+            <>
+              <NotificationCount>
+                <Hidden up={!showInResponsive ? 'sm' : null}>
+                  <Typography
+                    size={1.5}
+                    color="#000"
+                    weight="bold"
+                    margin="0 0 1.5rem"
+                  >
+                    Notificaciones
+                  </Typography>
+                </Hidden>
+                <Typography size={0.9} color="#B2B2B2" weight="bold">
+                  Tienes <span>{list.length}</span> notificaciones
+                </Typography>
+              </NotificationCount>
 
-          {list.map(notification => (
-            <NotificationItem
-              key={notification._id}
-              closePopover={() => setIsNotificationOpen(false)}
-              {...notification}
-            />
-          ))}
+              {list?.map(notification => (
+                <NotificationItem
+                  key={notification._id}
+                  closePopover={() => setIsNotificationOpen(false)}
+                  {...notification}
+                />
+              ))}
+            </>
+          )}
         </NotificationsPopoverContainer>
       }
     >
       <Hidden down={!showInResponsive ? 'sm' : null}>
-        <Badge content={list.filter(item => item.read === false).length} variant="danger" size="xs">
+        <Badge
+          content={list.filter(item => item.read === false).length}
+          variant="danger"
+          size="xs"
+        >
           <BellIcon width={20} color="white" />
         </Badge>
       </Hidden>
