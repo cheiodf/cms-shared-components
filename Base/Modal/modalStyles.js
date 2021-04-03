@@ -157,11 +157,11 @@ export const ModalConfirmIconContainer = styled.div`
 // profile petitions modal
 
 export const PetitionContainer = styled.div`
-  margin-top: 4rem;
+  margin-top: 3rem;
   overflow: hidden;
-  /* &:last-child div + div{
+  &:last-child .modalStyles__PetitionDivider{
     opacity: 0;
-  } */
+  }
 `;
 
 export const PetitionButtons = styled.div`

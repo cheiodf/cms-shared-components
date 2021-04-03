@@ -11,7 +11,6 @@ import {
 } from '../modalStyles';
 
 const ProfilePetitionsModal = ({
-  title,
   list = [],
   handleClose,
   buttonCloseTitle,
@@ -22,9 +21,9 @@ const ProfilePetitionsModal = ({
 }) => {
   return (
     <div>
-      <Typography tag="h3">{title}</Typography>
-
-      {console.log('list', list)}
+      <Typography tag="h3" color="#B2B2B2">
+        Tienes <span style={{ color: 'var(--primary)' }}>{list.length}</span> solicitud{list.length === 1 ? '' : 'es'} para ser {type === 'owner' ? 'responsable' : 'colaborador'}
+      </Typography>
   
       <div>
         {list.length ? list?.map(petition => 
@@ -54,7 +53,7 @@ const ProfilePetitionsModal = ({
                     size="sm"
                     type="button"
                     margin="2rem 0 1rem 1rem"
-                    variant="dark"
+                    variant="dark2"
                     onClick={() => onAction(petition[type]._id, 'rejected')}
                   >
                   Rechazar
@@ -62,7 +61,9 @@ const ProfilePetitionsModal = ({
                 </PetitionButtons>
               </GridItem>
             </Grid>
-            <Divider />
+            <div className="modalStyles__PetitionDivider">
+              <Divider />
+            </div>
           </PetitionContainer>
         ) : ''}
       </div>
