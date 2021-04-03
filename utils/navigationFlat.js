@@ -1,6 +1,6 @@
 import { navigation } from '../../utils/constants/navigation';
 
-const navigationFlatFunction = () => {
+export const navigationFlatFunction = (navigationItems = navigation) => {
   const newNavigation = [];
 
   const itemLoop = routes => {
@@ -15,7 +15,7 @@ const navigationFlatFunction = () => {
     return newNavigation;
   };
 
-  return itemLoop(navigation);
+  return itemLoop(navigationItems);
 };
 
 export const navigationFlat = navigationFlatFunction();

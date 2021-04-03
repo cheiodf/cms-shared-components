@@ -10,7 +10,10 @@ import {
 import { SideBarProps } from './sidebarProps';
 import SidebarItem from './SidebarItem';
 import { navigation } from '../../../utils/constants/navigation';
-import { navigationFlat } from '../../utils/navigationFlat';
+import {
+  navigationFlat,
+  navigationFlatFunction
+} from '../../utils/navigationFlat';
 import { useRouter } from 'next/router';
 import { BellIcon, CrossIcon } from '../../../components/Icons';
 import Divider from '../Divider/Divider';
@@ -72,16 +75,22 @@ const SidebarContainer = forwardRef(
           </SidebarLogoContainer>
 
           <SidebarList>
-            {navigationFilter.map(route => (
-              <SidebarItem
-                key={route.title}
-                path={route.path}
-                title={route.title}
-                icon={route.icon}
-                active={route.path === router.pathname}
-                closeSidebar={() => setIsSidebarOpen(false)}
-              />
-            ))}
+            {navigationFilter.map(route => {
+              const isSubPath = navigationFlatFunction(route.subPaths).some(
+                subPath => subPath.path === router.pathname
+              );
+
+              return (
+                <SidebarItem
+                  key={route.title}
+                  path={route.path}
+                  title={route.title}
+                  icon={route.icon}
+                  active={route.path === router.pathname || isSubPath}
+                  closeSidebar={() => setIsSidebarOpen(false)}
+                />
+              );
+            })}
             <SidebarItem
               title="Notificaciones"
               icon={BellIcon}
