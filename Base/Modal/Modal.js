@@ -11,7 +11,6 @@ import ModalsLibs from '../../../store/Modals/modalsLibs';
 import { closeModal } from '../../../store/Modals/modalsActions';
 import Paper from '../Paper/Paper';
 import { CrossIcon } from '../../../components/Icons';
-import CircleLoader from '../Loader/CircleLoader';
 import { props, defaultProps } from './modalProps';
 import Loader from '../../../components/Loader/Loader';
 
