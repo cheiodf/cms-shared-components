@@ -13,6 +13,7 @@ import Paper from '../Paper/Paper';
 import { CrossIcon } from '../../../components/Icons';
 import CircleLoader from '../Loader/CircleLoader';
 import { props, defaultProps } from './modalProps';
+import Loader from '../../../components/Loader/Loader';
 
 const Modal = ({ component, ...props }) => {
   const dispatch = useDispatch();
@@ -59,7 +60,7 @@ const Modal = ({ component, ...props }) => {
         <Paper radius={10} elevation={10}>
           {loading && (
             <ModalLoaderContainer>
-              <CircleLoader />
+              <Loader size={50} color="var(--primary)" />
             </ModalLoaderContainer>
           )}
           <ModalSubcontainer disabled={loading}>
