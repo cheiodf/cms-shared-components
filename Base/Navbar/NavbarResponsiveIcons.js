@@ -10,14 +10,15 @@ const NavbarResponsiveIcons = ({
   toggleSearch,
   hasSearchIcon,
   hasBarIcon,
-  setIsSidebarOpen
+  setIsSidebarOpen,
+  notificationsLength
 }) => {
   return (
     <Hidden up="sm">
       <NavResponsiveIconsContainer>
         {hasBarIcon && (
           <NavResponsiveIconContainer onClick={() => setIsSidebarOpen(true)}>
-            <Badge content={9} variant="danger" size="xs">
+            <Badge content={notificationsLength} variant="danger" size="xs">
               <BarsIcon width="20" color="#fff" />
             </Badge>
           </NavResponsiveIconContainer>

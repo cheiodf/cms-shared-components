@@ -14,7 +14,8 @@ const NotificationItem = ({
   title,
   createdAt,
   destination,
-  closePopover
+  closePopover,
+  read
 }) => {
   const timeSince = date => {
     const seconds = Math.floor((new Date() - date) / 1000);
@@ -47,7 +48,7 @@ const NotificationItem = ({
   return (
     <NotificationItemLink href={destination}>
       <a>
-        <NotificationItemContainer onClick={closePopover}>
+        <NotificationItemContainer onClick={closePopover} read={read}>
           <NotificationAvatarContainer>
             <Avatar
               isEditable={false}

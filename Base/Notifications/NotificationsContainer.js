@@ -15,6 +15,8 @@ const NotificationsContainer = ({
   setIsNotificationOpen,
   list
 }) => {
+  const unreadNotifications = list?.filter(item => item.read === false)?.length;
+
   return (
     <Popover
       width={400}
@@ -45,7 +47,11 @@ const NotificationsContainer = ({
                   </Typography>
                 </Hidden>
                 <Typography size={0.9} color="#B2B2B2" weight="bold">
-                  Tienes <span>{list.length}</span> notificaciones
+                  Tienes <span>{unreadNotifications}</span>{' '}
+                  {unreadNotifications !== 1
+                    ? 'notificaciones'
+                    : 'notificación '}{' '}
+                  no {unreadNotifications !== 1 ? ' leidas' : ' leida'}
                 </Typography>
               </NotificationCount>
 

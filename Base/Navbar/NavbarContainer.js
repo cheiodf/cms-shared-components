@@ -13,7 +13,8 @@ const NavbarContainer = ({
   isNotificationOpen,
   setIsNotificationOpen,
   userInfo,
-  avatarPopover
+  avatarPopover,
+  notificationsLength
 }) => {
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -38,6 +39,7 @@ const NavbarContainer = ({
         hasBarIcon={routeConfig?.hasSidebar}
         hasSearchIcon={routeConfig?.hasSearch}
         setIsSidebarOpen={setIsSidebarOpen}
+        notificationsLength={notificationsLength}
       />
 
       <NavIconsContainer>

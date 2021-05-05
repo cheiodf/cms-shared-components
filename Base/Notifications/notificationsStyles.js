@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
 export const NotificationsPopoverContainer = styled.div`
@@ -20,9 +20,33 @@ export const NotificationItemContainer = styled.div`
   gap: 1rem;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  position: relative;
+  ${({ read }) =>
+    read
+      ? css`
+          opacity: 0.8;
+        `
+      : css`
+          ::before {
+            content: '';
+            position: absolute;
+            top: 1.3125rem;
+            right: 1rem;
+            height: 10px;
+            width: 10px;
+            background-color: var(--success);
+            border-radius: 100%;
+          }
+        `}
 
   :hover {
     background-color: rgba(0, 0, 0, 0.025);
+    ${({ read }) =>
+      read &&
+      css`
+        opacity: 1;
+      `}
   }
 `;
 
