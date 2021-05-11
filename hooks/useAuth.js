@@ -11,7 +11,7 @@ function useAuth(action = 'RINA', roles = false) {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('useAuth');
+    console.log(window.location.href, 'useAuth');
     if (roles) {
       const user = JSON.parse(userInfo);
       let path = router.pathname;
