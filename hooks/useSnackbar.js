@@ -11,7 +11,7 @@ const useSnackbar = (id, animationDuration = 500) => {
   const { list } = useSelector(({ snackbars }) => snackbars);
 
   useEffect(() => {
-    if (open) setTimeout(() => handleCloseSnackbar(), 5000);
+    if (open) setTimeout(() => handleCloseSnackbar(), 50000);
   }, [open]);
 
   const handleCloseSnackbar = useCallback(() => {

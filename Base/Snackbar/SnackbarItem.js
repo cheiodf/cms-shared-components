@@ -10,11 +10,13 @@ import SnackbarLibs from '../../../store/Snackbars/snackbarLibs';
 import { CrossIcon } from '../../../components/Icons';
 import Typography from '../Typography/Typography';
 import useSnackbar from '../../hooks/useSnackbar';
+import { useRouter } from 'next/router';
 
 const SnackbarItem = ({ variant, content, action, id, close, index }) => {
   const animationDuration = useMemo(() => 500, []);
   const { closeSnackbar, open } = useSnackbar(id);
   const unmounted = useRef(false);
+  const router = useRouter();
 
   useEffect(() => {
     return () => {
@@ -29,6 +31,7 @@ const SnackbarItem = ({ variant, content, action, id, close, index }) => {
   const handleOnClickAction = () => {
     closeSnackbar();
     action.onClick && action.onClick();
+    action.href && router.push(action.href);
   };
 
   return (
@@ -49,8 +52,7 @@ const SnackbarItem = ({ variant, content, action, id, close, index }) => {
         {action && (
           <SnackbarActionTextContainer>
             <Typography
-              tag={action.href ? 'a' : 'p'}
-              href={action.href}
+              tag="p"
               onClick={handleOnClickAction}
               size={0.875}
               maxLines={2}
