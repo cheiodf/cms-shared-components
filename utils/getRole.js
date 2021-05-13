@@ -1,6 +1,5 @@
 import { parseCookies } from 'nookies';
 import jwtDecode from 'jwt-decode';
-import { navigationFlat } from './navigationFlat';
 import { findRouteConfig } from './findRoutConfig';
 
 const getRole = () => {
