@@ -13,7 +13,7 @@ function useAuth(action = 'RINA', roles = false) {
   useEffect(() => {
     if (roles) {
       const user = JSON.parse(userInfo);
-      let path = router.pathname;
+      let path = router.asPath;
       if (!path.endsWith('/')) path += '/';
 
       if (!getRouteRoles(path)?.roles.includes(user.role))
