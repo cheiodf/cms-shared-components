@@ -62,7 +62,9 @@ const TableCell = ({
         )}
 
         {type !== 'images' && type !== 'image' && (
-          <span>{hasDefaultValue && value}</span>
+          <span onClick={e => e.stopPropagation()} style={{ cursor: 'text' }}>
+            {hasDefaultValue && value}
+          </span>
         )}
         {children}
       </TableBodyCellSubcontainer>
