@@ -10,14 +10,12 @@ import {
 import { SideBarProps } from './sidebarProps';
 import SidebarItem from './SidebarItem';
 import { navigation } from '../../../utils/constants/navigation';
-import {
-  navigationFlat,
-  navigationFlatFunction
-} from '../../utils/navigationFlat';
+import { navigationFlatFunction } from '../../utils/navigationFlat';
 import { useRouter } from 'next/router';
 import { BellIcon, CrossIcon } from '../../../components/Icons';
 import Divider from '../Divider/Divider';
 import Link from 'next/link';
+import { findRouteConfig } from '../../utils/findRoutConfig';
 
 const SidebarContainer = forwardRef(
   (
@@ -36,9 +34,7 @@ const SidebarContainer = forwardRef(
   ) => {
     const router = useRouter();
 
-    const routeConfig = navigationFlat.filter(
-      page => page.path === router.pathname
-    )[0];
+    const routeConfig = findRouteConfig(router.asPath);
 
     if (!routeConfig?.hasSidebar) return true;
 

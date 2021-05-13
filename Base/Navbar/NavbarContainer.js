@@ -4,8 +4,8 @@ import NavbarSearch from './NavbarSearch';
 import Notifications from '../../../components/Notifications/Notifications';
 import NavbarAvatar from './NavbarAvatar';
 import NavbarResponsiveIcons from './NavbarResponsiveIcons';
-import { navigationFlat } from '../../utils/navigationFlat';
 import { useRouter } from 'next/router';
+import { findRouteConfig } from '../../utils/findRoutConfig';
 
 const NavbarContainer = ({
   setTheme,
@@ -19,9 +19,7 @@ const NavbarContainer = ({
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const routeConfig = navigationFlat.filter(
-    page => page.path === router.pathname
-  )[0];
+  const routeConfig = findRouteConfig(router.asPath);
 
   if (!routeConfig?.hasNav) return true;
 

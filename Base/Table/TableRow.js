@@ -38,16 +38,15 @@ const TableRow = ({
 
   const handleChaneRoute = () => {
     if (path) {
-      const redirectTo = path
-        .split('/')
-        .map(el =>
-          el.startsWith(':')
-            ? item[el.replace(':', '')]
-              ? item[el.replace(':', '')]
-              : 'key_not_found'
-            : el
-        )
-        .join('/');
+      const propToRepalce = path.substring(
+        path.lastIndexOf('{[') + 2,
+        path.lastIndexOf(']}')
+      );
+
+      const redirectTo = path.replace(
+        `{[${propToRepalce}]}`,
+        item[propToRepalce]
+      );
 
       router.push(redirectTo);
     }

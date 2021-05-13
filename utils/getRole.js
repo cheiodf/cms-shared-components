@@ -1,6 +1,7 @@
 import { parseCookies } from 'nookies';
 import jwtDecode from 'jwt-decode';
 import { navigationFlat } from './navigationFlat';
+import { findRouteConfig } from './findRoutConfig';
 
 const getRole = () => {
   const cookies = parseCookies();
@@ -12,13 +13,8 @@ const getRole = () => {
   }
 };
 export const getRouteRoles = (path, params) => {
-  const nav = navigationFlat.find(route => {
-    const a = params && Object.keys(params)[0]; // slug
-    let newPath = route.path;
-    if (a) newPath = route.path.replace(`[${a}]`, params[a]) + '/';
-    else newPath = route.path + '/';
-    return newPath === path;
-  });
+  const nav = findRouteConfig(path);
+
   return nav;
 };
 export default getRole;
